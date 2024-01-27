@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3p6yc14m14xh"]
+
+[ext_resource type="LabelSettings" uid="uid://11h7ay6l5xjs" path="res://UI/TitleLabelSettings.tres" id="1_bu7fm"]
+[ext_resource type="PackedScene" uid="uid://bfrkthsjqt71x" path="res://UI/GolfMeter/golf_meter_base.tscn" id="2_twwn7"]
+
+[node name="GolfMeterV" type="Control"]
+layout_mode = 3
+anchor_right = 0.305
+anchor_bottom = 0.684
+offset_bottom = -0.200012
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = -4.0
+offset_right = 87.0
+offset_bottom = 23.0
+text = "Hello World
+"
+label_settings = ExtResource("1_bu7fm")
+horizontal_alignment = 1
+
+[node name="GolfMeter" parent="." instance=ExtResource("2_twwn7")]
+custom_minimum_size = Vector2(33.16, 0)
+layout_mode = 2
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 50.0
+offset_top = 0.0
+offset_right = 531.0
+offset_bottom = 52.0
+rotation = 1.5708
+pivot_offset = Vector2(0, 52)
