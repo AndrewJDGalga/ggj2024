@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://en2xq5wxjh10"]
+
+[ext_resource type="Script" path="res://UI/BalanceMeter.gd" id="1_vaqlu"]
+[ext_resource type="LabelSettings" uid="uid://11h7ay6l5xjs" path="res://UI/TitleLabelSettings.tres" id="2_vycvf"]
+[ext_resource type="Texture2D" uid="uid://cem1wu2lpxf6l" path="res://UI/ProgressBar/BarBg.png" id="3_6djk8"]
+[ext_resource type="Texture2D" uid="uid://63ptta7ehmre" path="res://UI/ProgressBar/BarProgress.png" id="4_ucsb6"]
+[ext_resource type="Texture2D" uid="uid://vlh1uirlb4kh" path="res://UI/Icons/MeterPoint.png" id="5_xg03t"]
+
+[node name="BalanceMeter" type="VBoxContainer"]
+alignment = 1
+script = ExtResource("1_vaqlu")
+
+[node name="BalanceMeterText" type="Label" parent="."]
+layout_mode = 2
+text = "Balance Meter"
+label_settings = ExtResource("2_vycvf")
+
+[node name="BalanceMeterSafeProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 2
+value = 1.0
+fill_mode = 6
+texture_under = ExtResource("3_6djk8")
+texture_progress = ExtResource("4_ucsb6")
+
+[node name="BalanceMeterPoint" type="TextureRect" parent="BalanceMeterSafeProgressBar"]
+layout_mode = 1
+offset_right = 93.0
+offset_bottom = 89.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_xg03t")
+
+[node name="BalanceMeterCountdown" type="Label" parent="."]
+layout_mode = 2
+text = "10 sec"
+label_settings = ExtResource("2_vycvf")
+horizontal_alignment = 1

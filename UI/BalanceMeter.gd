@@ -33,3 +33,6 @@ func set_meter_point_percent(percent):
 # sets the difficulty of the meter to balance on Range 0-1
 func set_safe_zone_percent(percent):
 	$BalanceMeterSafeProgressBar.set_value(percent*100)
+	
+func set_meter_text(text: String):
+	$BalanceMeterText.set_text(text)
