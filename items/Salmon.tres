@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://dhke5qpi5pd0n"]
+
+[ext_resource type="Script" path="res://items/ItemData.gd" id="1_ueawb"]
+
+[resource]
+script = ExtResource("1_ueawb")
+item_name = ""
+item_desc = ""
+score = 25

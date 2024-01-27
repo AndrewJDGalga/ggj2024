@@ -10,9 +10,9 @@ func _ready():
 	pass # Replace with function body.
 
 # initializes the reward with the specified elements
-func set_reward(text: String, reward_image: Texture2D):
-	$VBoxContainer/RewardText.set_text("[center]" + text + "[/center]")
-	$VBoxContainer/CenterContainer/RewardImage.set_texture(reward_image)
+func set_reward(item_data:ItemData):
+	$VBoxContainer/RewardText.set_text("[center]" + str(item_data.item_name) + "[/center]")
+	$VBoxContainer/CenterContainer/RewardImage.set_texture(item_data.item_texture)
 
 # scrolls the text up if available
 func scroll_up():
