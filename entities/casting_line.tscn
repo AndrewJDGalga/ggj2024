@@ -13,3 +13,4 @@ offset_right = 2.0
 color = Color(0.831373, 0, 0.843137, 1)
 
 [node name="fishing_lure" parent="." instance=ExtResource("2_oy3vj")]
+top_level = true
