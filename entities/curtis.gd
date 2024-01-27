@@ -69,9 +69,10 @@ func _physics_process(delta):
 				if (Input.is_action_pressed("action2")):
 					reward_instance.scroll_down()
 			game_manager.PLAY_STATE.TEST:
-				cur_throw_power = -50
-				anim_player.play("toss_lure")
-				game_manager.cur_state = game_manager.PLAY_STATE.CASTING
+				catch_meter.start()
+				#cur_throw_power = -50
+				#anim_player.play("toss_lure")
+				#game_manager.cur_state = game_manager.PLAY_STATE.CASTING
 
 func set_attribute(min_limit, max_limit, attribute, gain, delta)->float:
 	if gain_attribute:
@@ -90,9 +91,6 @@ func turn_for_casting(delta):
 	if Input.is_action_pressed("action2") && rotation_degrees < 45:
 		rotation += turn_speed * delta
 
-func _on_fishing_lure_area_entered(_area):
-	if game_manager.cur_state == game_manager.PLAY_STATE.CASTING:
-		game_manager.cur_state = game_manager.PLAY_STATE.CAST_SUCCEED
 
 func _on_animation_player_animation_finished(_anim_name):
 	if game_manager.cur_state == game_manager.PLAY_STATE.CASTING:
@@ -107,3 +105,8 @@ func display_reward(item_data:ItemData):
 
 func close_reward():
 	remove_child(reward_instance)
+
+
+func _on_fishing_lure_successful_landing():
+	if game_manager.cur_state == game_manager.PLAY_STATE.CASTING:
+		game_manager.cur_state = game_manager.PLAY_STATE.CAST_SUCCEED
