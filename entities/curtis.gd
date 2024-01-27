@@ -11,6 +11,8 @@ func _physics_process(delta):
 	if game_manager:
 		match game_manager.cur_state:
 			game_manager.PLAY_STATE.LINE_UP:
+				if Input.is_action_just_pressed("action1") && Input.is_action_just_pressed("action2"):
+					game_manager.cur_state = game_manager.PLAY_STATE.CASTING
 				turn_for_casting(delta)
 			game_manager.PLAY_STATE.CASTING:
 				pass
