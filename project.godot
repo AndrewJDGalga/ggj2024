@@ -37,6 +37,12 @@ action2={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="def"
+2d_physics/layer_2="fishing_zone"
+2d_physics/layer_3="lure"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
