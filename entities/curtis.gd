@@ -1,16 +1,13 @@
 extends Area2D
 
-##amount of wobble while Curtis is sitting still
-@export var base_wobble:float = 2.0
-##amount curtis wobbles towards left or right while walking
-@export var walk_wobble:float = 4.0
+@onready var lure = $fishing_lure
+@export var turn_speed := 2.0
 
 func _physics_process(delta):
-	random_wobble(base_wobble, delta)
+	turn_for_casting(delta)
 
-func random_wobble(max, dt):
-	self.position += Vector2(randf_range(0,max), randf_range(0,max)) * dt
-
-#random val between 0 and max
-#func get_random_val(max)->float:
-	#return 
+func turn_for_casting(delta):
+	if Input.is_action_pressed("action1"):
+		rotation += turn_speed * delta
+	if Input.is_action_pressed("action2"):
+		rotation -= turn_speed * delta
