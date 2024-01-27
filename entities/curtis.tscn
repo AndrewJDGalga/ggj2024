@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://crmbqldvypv24"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7g544"]
+radius = 32.0
 
 [node name="Curtis" type="Area2D"]
 
