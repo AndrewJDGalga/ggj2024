@@ -19,5 +19,4 @@ offset_right = 24.0
 offset_bottom = 24.0
 
 [node name="fishing_lure" parent="." instance=ExtResource("2_gos2j")]
-top_level = true
 position = Vector2(0, -36)

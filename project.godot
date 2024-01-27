@@ -20,6 +20,10 @@ window/size/viewport_width=600
 window/size/viewport_height=800
 window/stretch/mode="canvas_items"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 action1={
