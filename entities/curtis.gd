@@ -26,15 +26,17 @@ func _physics_process(delta):
 				if cur_throw_power >= 0:
 					gain_power = true
 				print(cur_throw_power)
+				if Input.is_action_pressed("action1"):
+					game_manager.cur_state = game_manager.PLAY_STATE.ACCURACY
+					print(cur_throw_power)
 			game_manager.PLAY_STATE.CASTING:
 				pass
 			game_manager.PLAY_STATE.CATCHING:
 				pass
 	
 	#turn_for_casting(delta)
-	
-	if Input.is_action_pressed("action1"):
-		lure.position.y = game_manager.lure_y_limit
+
+
 
 func turn_for_casting(delta):
 	if Input.is_action_pressed("action1") && rotation_degrees > -45:
