@@ -22,7 +22,9 @@ func _physics_process(delta):
 			game_manager.PLAY_STATE.POWER:
 				if Input.is_action_pressed("action1"):
 					game_manager.cur_state = game_manager.PLAY_STATE.ACCURACY
-				set_power(delta)
+				cur_throw_power = set_attribute(
+					game_manager.lure_y_limit, 0, cur_throw_power, 
+					pow_gain_rate, delta)
 			game_manager.PLAY_STATE.ACCURACY:
 				if Input.is_action_pressed("action1"):
 					game_manager.cur_state = game_manager.PLAY_STATE.CASTING
@@ -44,18 +46,6 @@ func set_attribute(min, max, attribute, gain, delta)->float:
 	if attribute < min:
 		gain_attribute = true
 	return attribute
-
-func set_power(delta):
-	if gain_attribute:
-		cur_throw_power -= pow_gain_rate * delta
-	if !gain_attribute:
-		cur_throw_power += pow_gain_rate * delta
-	if cur_throw_power <= game_manager.lure_y_limit:
-		gain_attribute = false
-	if cur_throw_power >= 0:
-		gain_attribute = true
-	print(cur_throw_power)
-	
 
 func turn_for_casting(delta):
 	if Input.is_action_pressed("action1") && rotation_degrees > -45:
