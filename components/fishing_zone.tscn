@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bgouue1wlme4b"]
+
+[node name="fishing_zone" type="Area2D"]

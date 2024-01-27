@@ -38,14 +38,14 @@ func _physics_process(delta):
 			game_manager.PLAY_STATE.CATCHING:
 				pass
 
-func set_attribute(min, max, attribute, gain, delta)->float:
+func set_attribute(min_limit, max_limit, attribute, gain, delta)->float:
 	if gain_attribute:
 		attribute += gain * delta
 	if !gain_attribute:
 		attribute -= gain * delta
-	if attribute > max:
+	if attribute > max_limit:
 		gain_attribute = false
-	if attribute < min:
+	if attribute < min_limit:
 		gain_attribute = true
 	return attribute
 
