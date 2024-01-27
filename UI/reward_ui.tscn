@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqqjao5hwaxgy"]
+
+[ext_resource type="Script" path="res://UI/RewardUI.gd" id="1_pn2rr"]
+[ext_resource type="Texture2D" uid="uid://vlh1uirlb4kh" path="res://UI/Icons/MeterPoint.png" id="2_kge6w"]
+
+[node name="RewardUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pn2rr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 488.0
+offset_bottom = 264.0
+
+[node name="RewardText" type="RichTextLabel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.[/center]
+"
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="RewardImage" type="TextureRect" parent="VBoxContainer/CenterContainer"]
+layout_mode = 2
+texture = ExtResource("2_kge6w")
+stretch_mode = 2
