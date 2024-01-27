@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfrkthsjqt71x"]
+[gd_scene load_steps=5 format=3 uid="uid://bfrkthsjqt71x"]
 
+[ext_resource type="Script" path="res://UI/GolfMeter.gd" id="1_ao8yo"]
 [ext_resource type="Texture2D" uid="uid://cem1wu2lpxf6l" path="res://UI/ProgressBar/BarBg.png" id="1_mco4t"]
 [ext_resource type="Texture2D" uid="uid://63ptta7ehmre" path="res://UI/ProgressBar/BarProgress.png" id="2_drasb"]
 [ext_resource type="Texture2D" uid="uid://vlh1uirlb4kh" path="res://UI/Icons/MeterPoint.png" id="3_3th0w"]
@@ -14,6 +15,7 @@ offset_right = -122.0
 offset_bottom = -743.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ao8yo")
 
 [node name="BalanceMeterSafeProgressBar" type="TextureProgressBar" parent="."]
 layout_mode = 2
