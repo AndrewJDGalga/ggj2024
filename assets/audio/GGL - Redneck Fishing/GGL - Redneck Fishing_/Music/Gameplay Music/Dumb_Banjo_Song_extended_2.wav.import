@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmbte2gtk6ch8"
+path="res://.godot/imported/Dumb_Banjo_Song_extended_2.wav-e970a3a977b8a937eba448ef1e357a45.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Music/Gameplay Music/Dumb_Banjo_Song_extended_2.wav"
+dest_files=["res://.godot/imported/Dumb_Banjo_Song_extended_2.wav-e970a3a977b8a937eba448ef1e357a45.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
