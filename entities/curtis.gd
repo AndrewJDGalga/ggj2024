@@ -32,10 +32,9 @@ func _physics_process(delta):
 					-line_degree_limit, line_degree_limit, cur_accuracy, 
 					accuracy_gain_rate, delta)
 			game_manager.PLAY_STATE.CASTING:
-				rotation_degrees = -15
-				cur_throw_power = -200
-				#lure.rotation = rotation
 				lure.position.y = cur_throw_power
+				lure.position.x = cur_accuracy
+				game_manager.cur_state = game_manager.PLAY_STATE.CASTING
 			game_manager.PLAY_STATE.CATCHING:
 				pass
 
