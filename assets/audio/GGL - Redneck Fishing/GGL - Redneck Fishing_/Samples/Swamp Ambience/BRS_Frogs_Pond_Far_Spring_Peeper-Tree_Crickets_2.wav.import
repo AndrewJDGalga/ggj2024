@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bk8eitj1g6xr8"
+path="res://.godot/imported/BRS_Frogs_Pond_Far_Spring_Peeper-Tree_Crickets_2.wav-17813a5059c8f8de02f9931f588ca904.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Swamp Ambience/BRS_Frogs_Pond_Far_Spring_Peeper-Tree_Crickets_2.wav"
+dest_files=["res://.godot/imported/BRS_Frogs_Pond_Far_Spring_Peeper-Tree_Crickets_2.wav-17813a5059c8f8de02f9931f588ca904.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

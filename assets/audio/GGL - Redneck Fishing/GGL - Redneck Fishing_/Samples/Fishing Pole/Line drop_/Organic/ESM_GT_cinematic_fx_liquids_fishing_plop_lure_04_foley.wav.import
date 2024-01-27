@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dftoov8nkcerw"
+path="res://.godot/imported/ESM_GT_cinematic_fx_liquids_fishing_plop_lure_04_foley.wav-7c22303e5d4b70063a77675ad6c8e8ec.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line drop_/Organic/ESM_GT_cinematic_fx_liquids_fishing_plop_lure_04_foley.wav"
+dest_files=["res://.godot/imported/ESM_GT_cinematic_fx_liquids_fishing_plop_lure_04_foley.wav-7c22303e5d4b70063a77675ad6c8e8ec.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

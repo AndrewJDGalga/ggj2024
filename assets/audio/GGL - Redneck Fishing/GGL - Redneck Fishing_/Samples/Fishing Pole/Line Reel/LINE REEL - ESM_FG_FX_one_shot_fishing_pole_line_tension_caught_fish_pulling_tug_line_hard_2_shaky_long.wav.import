@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ci7ayon24k6qh"
+path="res://.godot/imported/LINE REEL - ESM_FG_FX_one_shot_fishing_pole_line_tension_caught_fish_pulling_tug_line_hard_2_shaky_long.wav-a7e46127aa47dffe6d47dcd0f84ec779.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line Reel/LINE REEL - ESM_FG_FX_one_shot_fishing_pole_line_tension_caught_fish_pulling_tug_line_hard_2_shaky_long.wav"
+dest_files=["res://.godot/imported/LINE REEL - ESM_FG_FX_one_shot_fishing_pole_line_tension_caught_fish_pulling_tug_line_hard_2_shaky_long.wav-a7e46127aa47dffe6d47dcd0f84ec779.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

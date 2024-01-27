@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://yjlvdemw4d6n"
+path="res://.godot/imported/ESM_SG_fx_combat_whoosh_swing_throw_fast_01.wav-827d7cec7dd22abb4ca5a1d54350c81a.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fight/ESM_SG_fx_combat_whoosh_swing_throw_fast_01.wav"
+dest_files=["res://.godot/imported/ESM_SG_fx_combat_whoosh_swing_throw_fast_01.wav-827d7cec7dd22abb4ca5a1d54350c81a.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

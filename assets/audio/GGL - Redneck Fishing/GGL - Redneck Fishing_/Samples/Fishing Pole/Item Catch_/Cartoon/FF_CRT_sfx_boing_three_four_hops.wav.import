@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dqhs6j7nhyikw"
+path="res://.godot/imported/FF_CRT_sfx_boing_three_four_hops.wav-ee12a85180e308109833660921dc51ce.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Item Catch_/Cartoon/FF_CRT_sfx_boing_three_four_hops.wav"
+dest_files=["res://.godot/imported/FF_CRT_sfx_boing_three_four_hops.wav-ee12a85180e308109833660921dc51ce.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://phywutr17lnh"
+path="res://.godot/imported/StreamWater_S08AM.60.wav-90ab85093411f7bf90dc4b5ee30f58c6.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Water/StreamWater_S08AM.60.wav"
+dest_files=["res://.godot/imported/StreamWater_S08AM.60.wav-90ab85093411f7bf90dc4b5ee30f58c6.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

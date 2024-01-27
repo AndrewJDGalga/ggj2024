@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://desqtwcsnwejd"
+path="res://.godot/imported/FF_CRT_sfx_siren_slip_wee_d.wav-e6e29bfe948c165c23677a0ecba3d96c.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line Cast_/Cartoon/FF_CRT_sfx_siren_slip_wee_d.wav"
+dest_files=["res://.godot/imported/FF_CRT_sfx_siren_slip_wee_d.wav-e6e29bfe948c165c23677a0ecba3d96c.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

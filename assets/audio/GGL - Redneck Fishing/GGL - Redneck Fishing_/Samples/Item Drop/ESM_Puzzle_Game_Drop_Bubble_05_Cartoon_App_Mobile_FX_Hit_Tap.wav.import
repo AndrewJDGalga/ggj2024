@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ovjhkt1h71vd"
+path="res://.godot/imported/ESM_Puzzle_Game_Drop_Bubble_05_Cartoon_App_Mobile_FX_Hit_Tap.wav-55b8b392bb40f8f7aa4b40abe38125a8.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Item Drop/ESM_Puzzle_Game_Drop_Bubble_05_Cartoon_App_Mobile_FX_Hit_Tap.wav"
+dest_files=["res://.godot/imported/ESM_Puzzle_Game_Drop_Bubble_05_Cartoon_App_Mobile_FX_Hit_Tap.wav-55b8b392bb40f8f7aa4b40abe38125a8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://vwr0k8wubtyh"
+path="res://.godot/imported/ESM_Puzzle_Game_Drop_Silly_Morph_01_Cartoon_App_Mobile_FX_Hit_Tap.wav-f5f4ce846af65f91c6d935e6a9b9aaa8.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line Cast_/Cartoon/ESM_Puzzle_Game_Drop_Silly_Morph_01_Cartoon_App_Mobile_FX_Hit_Tap.wav"
+dest_files=["res://.godot/imported/ESM_Puzzle_Game_Drop_Silly_Morph_01_Cartoon_App_Mobile_FX_Hit_Tap.wav-f5f4ce846af65f91c6d935e6a9b9aaa8.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

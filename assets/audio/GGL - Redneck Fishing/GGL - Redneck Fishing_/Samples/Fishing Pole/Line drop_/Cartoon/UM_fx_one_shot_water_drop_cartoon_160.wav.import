@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dg2u3tf4h6vd6"
+path="res://.godot/imported/UM_fx_one_shot_water_drop_cartoon_160.wav-36e97853e4679d994cc7126f9346f2ce.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line drop_/Cartoon/UM_fx_one_shot_water_drop_cartoon_160.wav"
+dest_files=["res://.godot/imported/UM_fx_one_shot_water_drop_cartoon_160.wav-36e97853e4679d994cc7126f9346f2ce.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

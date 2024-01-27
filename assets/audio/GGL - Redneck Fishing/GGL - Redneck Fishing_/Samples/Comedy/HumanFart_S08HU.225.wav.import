@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://lr2pmbdaeg4m"
+path="res://.godot/imported/HumanFart_S08HU.225.wav-fe70a22e403d71179e5f9940b49caf6e.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Comedy/HumanFart_S08HU.225.wav"
+dest_files=["res://.godot/imported/HumanFart_S08HU.225.wav-fe70a22e403d71179e5f9940b49caf6e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

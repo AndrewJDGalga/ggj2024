@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://8u2rua8bmgr8"
+path="res://.godot/imported/ESM_Vibrant_Game_Water_Drop_Game_Touch_1_Arcade_Cartoon_Quirky_Comedy_Comedic_Kid_Childish_Fun_Bouncy.wav-7d6432725026bd1e29d7ad84ce9d5e70.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line drop_/Cartoon/ESM_Vibrant_Game_Water_Drop_Game_Touch_1_Arcade_Cartoon_Quirky_Comedy_Comedic_Kid_Childish_Fun_Bouncy.wav"
+dest_files=["res://.godot/imported/ESM_Vibrant_Game_Water_Drop_Game_Touch_1_Arcade_Cartoon_Quirky_Comedy_Comedic_Kid_Childish_Fun_Bouncy.wav-7d6432725026bd1e29d7ad84ce9d5e70.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://gw064aau1yhi"
+path="res://.godot/imported/ESM_FG_FX_one_shot_fishing_pole_cast_line_3_throw_fishing_pole_rod_movement_ready.wav-9eeb85dcff3c4dfddc632906d8484fb3.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line Cast_/Organic/ESM_FG_FX_one_shot_fishing_pole_cast_line_3_throw_fishing_pole_rod_movement_ready.wav"
+dest_files=["res://.godot/imported/ESM_FG_FX_one_shot_fishing_pole_cast_line_3_throw_fishing_pole_rod_movement_ready.wav-9eeb85dcff3c4dfddc632906d8484fb3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

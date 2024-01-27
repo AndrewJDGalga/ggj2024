@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cf1pthse08d4o"
+path="res://.godot/imported/FF_CRT_sfx_punch_knockout_high.wav-d267cd46f60d4030f2a9c2fdeaa1a76f.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Misc/Cartoon/FF_CRT_sfx_punch_knockout_high.wav"
+dest_files=["res://.godot/imported/FF_CRT_sfx_punch_knockout_high.wav-d267cd46f60d4030f2a9c2fdeaa1a76f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

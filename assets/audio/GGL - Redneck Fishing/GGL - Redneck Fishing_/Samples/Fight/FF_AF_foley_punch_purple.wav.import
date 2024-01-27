@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctuxqi53oa8qi"
+path="res://.godot/imported/FF_AF_foley_punch_purple.wav-bb845117de6f55f15e3c07735fe31996.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fight/FF_AF_foley_punch_purple.wav"
+dest_files=["res://.godot/imported/FF_AF_foley_punch_purple.wav-bb845117de6f55f15e3c07735fe31996.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
