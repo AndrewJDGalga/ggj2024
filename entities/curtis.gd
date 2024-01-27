@@ -51,7 +51,7 @@ func _physics_process(delta):
 			game_manager.PLAY_STATE.CATCHING:
 				pass
 			game_manager.PLAY_STATE.CATCH_SUCCEED:
-				print("Caught!")
+				#print("Caught!")
 				var item_data = load("res://items/Salmon.tres")
 				var item_instance = item_data.duplicate()
 				item_instance.item_weight = rng.randi_range(0,100)
