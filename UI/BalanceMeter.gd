@@ -12,7 +12,7 @@ func _process(delta):
 		#step_debug_meter()
 		pass
 
-func start():
+func start(new_width:float):
 	is_running = true
 	reset()
 
