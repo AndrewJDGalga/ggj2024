@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var lure = $fishing_lure
+@onready var anim_player = $AnimationPlayer
 @export var game_manager:Game_Manager
 @export var turn_speed := 2.0
 ##rotation limit for player's line + accuracy mod
@@ -34,9 +35,19 @@ func _physics_process(delta):
 			game_manager.PLAY_STATE.CASTING:
 				lure.position.y = cur_throw_power
 				lure.position.x = cur_accuracy
-				game_manager.cur_state = game_manager.PLAY_STATE.CASTING
+			game_manager.PLAY_STATE.CATCH_FAIL:
+				print("Fail!")
+				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
+			game_manager.PLAY_STATE.CAST_SUCCEED:
+				print("cast success!")
+			game_manager.PLAY_STATE.CATCH_SUCCEED:
+				print("Caught!")
 			game_manager.PLAY_STATE.CATCHING:
 				pass
+			game_manager.PLAY_STATE.TEST:
+				cur_throw_power = -50
+				anim_player.play("toss_lure")
+				game_manager.cur_state = game_manager.PLAY_STATE.CASTING
 
 func set_attribute(min_limit, max_limit, attribute, gain, delta)->float:
 	if gain_attribute:
@@ -54,3 +65,11 @@ func turn_for_casting(delta):
 		rotation -= turn_speed * delta
 	if Input.is_action_pressed("action2") && rotation_degrees < 45:
 		rotation += turn_speed * delta
+
+func _on_fishing_lure_area_entered(_area):
+	if game_manager.cur_state == game_manager.PLAY_STATE.CASTING:
+		game_manager.cur_state = game_manager.PLAY_STATE.CAST_SUCCEED
+
+func _on_animation_player_animation_finished(_anim_name):
+	if game_manager.cur_state == game_manager.PLAY_STATE.CASTING:
+		game_manager.cur_state = game_manager.PLAY_STATE.CATCH_FAIL
