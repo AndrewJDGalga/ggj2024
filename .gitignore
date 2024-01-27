@@ -1,8 +1,5 @@
-*
-**/*
+.git
+.godot
+icon.svg
+icon.svg.import
 
-!levels/
-!entities/
-!.gitignore
-!project.godot
-!*.tscn
