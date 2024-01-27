@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bywkmfun5je8l"]
+[gd_scene load_steps=5 format=3 uid="uid://bywkmfun5je8l"]
 
 [ext_resource type="Texture2D" uid="uid://cem1wu2lpxf6l" path="res://UI/ProgressBar/BarBg.png" id="1_icce3"]
+[ext_resource type="Script" path="res://MeterUIManager.gd" id="1_wm811"]
 [ext_resource type="Texture2D" uid="uid://63ptta7ehmre" path="res://UI/ProgressBar/BarProgress.png" id="2_kxql8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nag8f"]
@@ -18,6 +19,7 @@ grow_vertical = 2
 layout_mode = 0
 offset_right = 479.0
 offset_bottom = 78.0
+script = ExtResource("1_wm811")
 
 [node name="LineMeter" type="VBoxContainer" parent="MeterBarList"]
 layout_mode = 2
