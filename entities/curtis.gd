@@ -2,6 +2,10 @@ extends Area2D
 
 @onready var lure = $fishing_lure
 @export var turn_speed := 2.0
+var game_manager
+
+func _ready():
+	game_manager = get_tree().root.get_child(0)
 
 func _physics_process(delta):
 	turn_for_casting(delta)
