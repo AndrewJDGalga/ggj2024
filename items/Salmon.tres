@@ -1,10 +1,9 @@
-[gd_resource type="Resource" script_class="StaticItemData" load_steps=3 format=3 uid="uid://dhke5qpi5pd0n"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://dhke5qpi5pd0n"]
 
-[ext_resource type="Texture2D" uid="uid://vlh1uirlb4kh" path="res://UI/Icons/MeterPoint.png" id="1_37grm"]
 [ext_resource type="Script" path="res://items/ItemData.gd" id="1_ueawb"]
 
 [resource]
 script = ExtResource("1_ueawb")
-ItemName = "Salmon"
-ItemDescription = "A tasty fish"
-ItemTexture = ExtResource("1_37grm")
+item_name = ""
+item_desc = ""
+score = 25
