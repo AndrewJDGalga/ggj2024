@@ -1,0 +1,62 @@
+[gd_scene load_steps=4 format=3 uid="uid://bywkmfun5je8l"]
+
+[ext_resource type="Texture2D" uid="uid://cem1wu2lpxf6l" path="res://UI/ProgressBar/BarBg.png" id="1_icce3"]
+[ext_resource type="Texture2D" uid="uid://63ptta7ehmre" path="res://UI/ProgressBar/BarProgress.png" id="2_kxql8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nag8f"]
+font_size = 32
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MeterBarList" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 479.0
+offset_bottom = 78.0
+
+[node name="LineMeter" type="VBoxContainer" parent="MeterBarList"]
+layout_mode = 2
+alignment = 1
+
+[node name="LineMeterText" type="Label" parent="MeterBarList/LineMeter"]
+layout_mode = 2
+text = "Line Meter"
+label_settings = SubResource("LabelSettings_nag8f")
+
+[node name="LineMeterProgressBar" type="TextureProgressBar" parent="MeterBarList/LineMeter"]
+layout_mode = 2
+texture_under = ExtResource("1_icce3")
+texture_progress = ExtResource("2_kxql8")
+
+[node name="AlligatorMeter" type="VBoxContainer" parent="MeterBarList"]
+layout_mode = 2
+alignment = 1
+
+[node name="AlligatorMeterText" type="Label" parent="MeterBarList/AlligatorMeter"]
+layout_mode = 2
+text = "Alligator Meter"
+label_settings = SubResource("LabelSettings_nag8f")
+
+[node name="AlligatorMeterProgressBar" type="TextureProgressBar" parent="MeterBarList/AlligatorMeter"]
+layout_mode = 2
+texture_under = ExtResource("1_icce3")
+texture_progress = ExtResource("2_kxql8")
+
+[node name="BalanceMeter" type="VBoxContainer" parent="MeterBarList"]
+layout_mode = 2
+alignment = 1
+
+[node name="BalanceMeterText" type="Label" parent="MeterBarList/BalanceMeter"]
+layout_mode = 2
+text = "Balance Meter"
+label_settings = SubResource("LabelSettings_nag8f")
+
+[node name="BalanceMeterProgressBar" type="TextureProgressBar" parent="MeterBarList/BalanceMeter"]
+layout_mode = 2
+texture_under = ExtResource("1_icce3")
+texture_progress = ExtResource("2_kxql8")
