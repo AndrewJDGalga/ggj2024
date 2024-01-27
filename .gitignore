@@ -1,7 +1,7 @@
 *
 **/*
 
-!level/
+!levels/
 !.gitignore
 !project.godot
-!*.tcsn
+!*.tscn
