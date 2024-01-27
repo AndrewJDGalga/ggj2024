@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgouue1wlme4b"]
+[gd_scene load_steps=3 format=3 uid="uid://bgouue1wlme4b"]
+
+[ext_resource type="Script" path="res://components/fishing_zone.gd" id="1_ituyp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rcrbo"]
 radius = 32.0
@@ -6,6 +8,7 @@ radius = 32.0
 [node name="fishing_zone" type="Area2D"]
 collision_layer = 2
 collision_mask = 4
+script = ExtResource("1_ituyp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rcrbo")

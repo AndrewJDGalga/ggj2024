@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var lure = $fishing_lure
 @onready var anim_player = $AnimationPlayer
+@onready var catch_meter = $FishCatchMeter
 @export var game_manager:Game_Manager
 @export var turn_speed := 2.0
 ##rotation limit for player's line + accuracy mod
@@ -40,10 +41,11 @@ func _physics_process(delta):
 				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
 			game_manager.PLAY_STATE.CAST_SUCCEED:
 				print("cast success!")
-			game_manager.PLAY_STATE.CATCH_SUCCEED:
-				print("Caught!")
+				game_manager.cur_state = game_manager.PLAY_STATE.CATCHING
 			game_manager.PLAY_STATE.CATCHING:
 				pass
+			game_manager.PLAY_STATE.CATCH_SUCCEED:
+				print("Caught!")
 			game_manager.PLAY_STATE.TEST:
 				cur_throw_power = -50
 				anim_player.play("toss_lure")

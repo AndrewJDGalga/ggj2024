@@ -31,3 +31,4 @@ game_manager = NodePath("..")
 
 [node name="fishing_zone" parent="." instance=ExtResource("3_6qolk")]
 position = Vector2(307, 584)
+ease_rating = 5

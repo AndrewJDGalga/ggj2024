@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://crmbqldvypv24"]
+[gd_scene load_steps=7 format=3 uid="uid://crmbqldvypv24"]
 
 [ext_resource type="Script" path="res://entities/curtis.gd" id="1_7lmy5"]
 [ext_resource type="PackedScene" uid="uid://b6eadiimgwj4m" path="res://components/fishing_lure.tscn" id="2_gos2j"]
+[ext_resource type="PackedScene" uid="uid://en2xq5wxjh10" path="res://UI/balance_meter.tscn" id="3_kl8f3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7g544"]
 radius = 24.0
@@ -34,6 +35,13 @@ position = Vector2(0, -36)
 libraries = {
 "": SubResource("AnimationLibrary_lq06r")
 }
+
+[node name="FishCatchMeter" parent="." instance=ExtResource("3_kl8f3")]
+offset_left = -120.0
+offset_top = 5.0
+offset_right = 359.0
+offset_bottom = 154.0
+scale = Vector2(0.5, 0.5)
 
 [connection signal="area_entered" from="fishing_lure" to="." method="_on_fishing_lure_area_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
