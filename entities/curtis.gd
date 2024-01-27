@@ -15,6 +15,7 @@ var cur_throw_power := 0.0
 var cur_accuracy := 0.0
 #tied to pow and accuracy gain
 var gain_attribute := true
+var rng = RandomNumberGenerator.new()
 
 func _ready():
 	catch_meter.set_meter_text("Balance the line!")
@@ -51,10 +52,18 @@ func _physics_process(delta):
 				pass
 			game_manager.PLAY_STATE.CATCH_SUCCEED:
 				print("Caught!")
-				display_reward()
+				var item_data = load("res://items/Salmon.tres")
+				var item_instance = item_data.duplicate()
+				item_instance.item_weight = rng.randi_range(0,100)
+				
+				display_reward(item_instance)
+				
+				# close window / continue
 				if (Input.is_action_pressed("action1") && Input.is_action_pressed("action2")):
 					close_reward()
 					game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
+					
+				# scrolling functionality
 				if (Input.is_action_pressed("action1")):
 					reward_instance.scroll_up()
 				if (Input.is_action_pressed("action2")):
@@ -89,12 +98,12 @@ func _on_animation_player_animation_finished(_anim_name):
 	if game_manager.cur_state == game_manager.PLAY_STATE.CASTING:
 		game_manager.cur_state = game_manager.PLAY_STATE.CATCH_FAIL
 		
-func display_reward():
+func display_reward(item_data:ItemData):
 	if (!is_instance_valid(reward_instance)):
 		reward_instance = reward_ui.instantiate()
 		add_child(reward_instance)
 		
-	reward_instance.set_reward("Test Reward!", load("res://UI/Icons/MeterPoint.png"))
+	reward_instance.set_reward(item_data)
 
 func close_reward():
 	remove_child(reward_instance)
