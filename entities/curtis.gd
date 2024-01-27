@@ -69,8 +69,12 @@ func _physics_process(delta):
 				if (Input.is_action_pressed("action2")):
 					reward_instance.scroll_down()
 			game_manager.PLAY_STATE.TEST:
+				if Input.is_action_just_pressed("ui_accept"):
+					catch_meter.start(0.3, 0.2)
 				if Input.is_action_pressed("action1"):
-					catch_meter.start(1, 0.2)
+					catch_meter.push_point(1, 2.0, delta)
+				if Input.is_action_pressed("action2"):
+					catch_meter.push_point(-1, 2.0, delta)
 				#cur_throw_power = -50
 				#anim_player.play("toss_lure")
 				#game_manager.cur_state = game_manager.PLAY_STATE.CASTING

@@ -2,7 +2,7 @@ extends VBoxContainer
 
 @onready var meter = $BalanceMeterSafeProgressBar
 @onready var timer = $Timer
-@export var auto_slide_speed : float = 0.01
+@export var auto_slide_slow : float = 4
 @export var controlled_slide_speed : float = 0.1
 var TimeUnits = "seconds"
 var new_percent = 0 # testing var for debug
@@ -20,9 +20,17 @@ func _physics_process(delta):
 	if is_running:
 		#step_debug_meter()
 		auto_move_point(delta)
+		fail_check()
+
+func push_point(dir:float, slow:float, dt:float):
+	print(cur_point_pos)
+	cur_point_pos = set_meter_point_percent(cur_point_pos + (dt/slow)*dir)
+	print(cur_point_pos)
 
 func auto_move_point(delta):
-	cur_point_pos = set_meter_point_percent(cur_point_pos + delta/4 * pull_dir)
+	cur_point_pos = set_meter_point_percent(cur_point_pos + delta/auto_slide_slow * pull_dir)
+
+func fail_check():
 	if cur_point_pos > meter.get_size().x || \
 		cur_point_pos < (meter.get_size().x - meter.get_size().x/2):
 		emit_signal("has_failed")
@@ -39,6 +47,7 @@ func start(safe_width:float, dir_timer_amt:float):
 	reset(safe_width)
 
 func reset(new_safe_width:float):
+	cur_point_pos = 0.5
 	set_meter_point_percent(0.5)
 	set_safe_zone_percent(new_safe_width)
 
