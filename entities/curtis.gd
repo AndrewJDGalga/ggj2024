@@ -16,6 +16,9 @@ var cur_accuracy := 0.0
 #tied to pow and accuracy gain
 var gain_attribute := true
 
+func _ready():
+	catch_meter.set_meter_text("Balance the line!")
+
 func _physics_process(delta):
 	if game_manager:
 		match game_manager.cur_state:

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c4huleaavregg"
+path="res://.godot/imported/GGL_-_Redneck_Fishing_3.wav-e7f4aae5ed11bf7ac8742b9f0ee78323.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Music/Gameplay Music/GGL_-_Redneck_Fishing_3.wav"
+dest_files=["res://.godot/imported/GGL_-_Redneck_Fishing_3.wav-e7f4aae5ed11bf7ac8742b9f0ee78323.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

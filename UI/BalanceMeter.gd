@@ -2,12 +2,22 @@ extends VBoxContainer
 
 var TimeUnits = "seconds"
 var new_percent = 0 # testing var for debug
+var is_running := false
 
 func _ready():
 	set_balance_meter_time(5);
 
 func _process(delta):
-	step_debug_meter()
+	if is_running:
+		#step_debug_meter()
+		pass
+
+func start():
+	is_running = true
+	reset()
+
+func reset():
+	set_meter_point_percent(0.5)
 
 # function used for debugging the meter
 func step_debug_meter():

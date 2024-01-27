@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dp3c1psdf5at2"
+path="res://.godot/imported/Nature_Forrest_Swamp_sounds.mp3-8a22718a4aa8df5a1c417b70d18ed639.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Swamp Ambience/Nature_Forrest_Swamp_sounds.mp3"
+dest_files=["res://.godot/imported/Nature_Forrest_Swamp_sounds.mp3-8a22718a4aa8df5a1c417b70d18ed639.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
