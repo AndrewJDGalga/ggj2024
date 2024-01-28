@@ -38,19 +38,23 @@ func _physics_process(delta):
 					game_manager.cur_state = game_manager.PLAY_STATE.CASTING
 				turn_for_casting(delta)
 			game_manager.PLAY_STATE.POWER:
-				accuracy_meter.visible = false
 				pow_meter.visible = true
 				pow_meter.start()
 				if Input.is_action_pressed("action1"):
+					lure.position.y = game_manager.lure_y_limit * pow_meter.get_percent()
+					pow_meter.stop()
+					pow_meter.visible = false
 					game_manager.cur_state = game_manager.PLAY_STATE.ACCURACY
 				cur_throw_power = set_attribute(
 					game_manager.lure_y_limit, 0, cur_throw_power, 
 					pow_gain_rate, delta)
 			game_manager.PLAY_STATE.ACCURACY:
-				accuracy_meter.visible = false
-				pow_meter.visible = true
+				accuracy_meter.visible = true
+				accuracy_meter.start()
 				if Input.is_action_pressed("action1"):
-					pow_meter.visible = false
+					lure.position.x = line_degree_limit * accuracy_meter.get_percent()
+					accuracy_meter.stop()
+					accuracy_meter.visible = false
 					game_manager.cur_state = game_manager.PLAY_STATE.CASTING
 				cur_accuracy = set_attribute(
 					-line_degree_limit, line_degree_limit, cur_accuracy, 
@@ -88,18 +92,7 @@ func _physics_process(delta):
 				#TODO fail notice
 				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
 			game_manager.PLAY_STATE.TEST:
-				pow_meter.visible = true
-				
-				if Input.is_action_just_pressed("ui_accept"):
-					accuracy_meter.set_label("Accuracy")
-					pow_meter.set_label("Power")
-					pow_meter.start()
-				
-				if Input.is_action_just_pressed("action1"):
-					var new_pos = game_manager.lure_y_limit * pow_meter.get_percent()
-					print(new_pos)
-					lure.position.y = new_pos
-					pow_meter.stop()
+				pass
 
 func set_attribute(min_limit, max_limit, attribute, gain, delta)->float:
 	if gain_attribute:
