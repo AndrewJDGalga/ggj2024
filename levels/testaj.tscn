@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://eg50hifamjev"]
+[gd_scene load_steps=8 format=3 uid="uid://eg50hifamjev"]
 
 [ext_resource type="PackedScene" uid="uid://crmbqldvypv24" path="res://entities/curtis.tscn" id="1_7jb4x"]
 [ext_resource type="Script" path="res://levels/game_manager.gd" id="1_nvk7h"]
 [ext_resource type="PackedScene" uid="uid://bgouue1wlme4b" path="res://components/fishing_zone.tscn" id="3_6qolk"]
 [ext_resource type="Texture2D" uid="uid://vlh1uirlb4kh" path="res://UI/Icons/MeterPoint.png" id="4_jgtcq"]
+[ext_resource type="PackedScene" uid="uid://vxm4pou8n1l8" path="res://UI/score_summary.tscn" id="5_rgktf"]
 
 [sub_resource type="Animation" id="Animation_qu365"]
 resource_name = "TimeOfDay"
@@ -52,9 +53,6 @@ color = Color(0.631373, 0.243137, 0, 1)
 position = Vector2(309, 713)
 game_manager = NodePath("..")
 
-[node name="fishing_lure" parent="Curtis" index="2"]
-position = Vector2(-10, -151)
-
 [node name="fishing_zone" parent="." instance=ExtResource("3_6qolk")]
 position = Vector2(307, 584)
 ease_rating = 5
@@ -87,4 +85,8 @@ libraries = {
 "": SubResource("AnimationLibrary_jqub8")
 }
 
-[editable path="Curtis"]
+[node name="score_summary" parent="." instance=ExtResource("5_rgktf")]
+offset_left = 62.0
+offset_top = 262.0
+offset_right = 102.0
+offset_bottom = 302.0

@@ -1,10 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://vxm4pou8n1l8"]
+[gd_scene load_steps=3 format=3 uid="uid://vxm4pou8n1l8"]
 
 [ext_resource type="Script" path="res://score_summary.gd" id="1_w053l"]
 [ext_resource type="Texture2D" uid="uid://c4pjdfbdy4fox" path="res://assets/art/Red Neck Fishing.png" id="2_fwh0m"]
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dlxut"]
-blend_mode = 1
 
 [node name="score_summary" type="Control"]
 layout_mode = 3
@@ -13,14 +10,22 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_w053l")
 
-[node name="PanelBackground" type="Panel" parent="."]
-material = SubResource("CanvasItemMaterial_dlxut")
+[node name="PanelBackground" type="ColorRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(12.16, 8.36)
+color = Color(0, 0, 0, 1)
 
-[node name="LabelScore" type="Label" parent="."]
+[node name="ActualScore" type="Label" parent="."]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 21.0
+offset_right = 264.0
+offset_bottom = 44.0
+text = "0000000000"
+
+[node name="FishingScore" type="Label" parent="."]
 layout_mode = 0
 offset_left = 59.0
 offset_top = 21.0
@@ -43,3 +48,5 @@ offset_top = 197.0
 offset_right = 419.0
 offset_bottom = 228.0
 text = "Try Again?"
+
+[connection signal="pressed" from="RetryButton" to="." method="_on_retry_button_pressed"]
