@@ -18,6 +18,7 @@ func _process(delta):
 		set_meter_point_percent(cur_meter_percent)
 
 func get_percent()->float:
+	print(cur_meter_percent)
 	return cur_meter_percent
 
 func stop():
@@ -25,6 +26,7 @@ func stop():
 	reset()
 
 func start():
+	print("start")
 	is_running = true
 	reset()
 
