@@ -80,14 +80,15 @@ func _physics_process(delta):
 				print("catch fail")
 				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
 			game_manager.PLAY_STATE.TEST:
-				golf_meter_h.visible = true
-				golf_meter_h.start()
-				
-				golf_meter_v.visible = false
-				
-				if Input.is_action_just_pressed("action1"):
-					print(golf_meter_h.get_percent())
-					golf_meter_h.stop()
+				lure.position.y = -200
+				#golf_meter_h.visible = true
+				#golf_meter_h.start()
+				#
+				#golf_meter_v.visible = false
+				#
+				#if Input.is_action_just_pressed("action1"):
+					#print(golf_meter_h.get_percent())
+					#golf_meter_h.stop()
 					
 				
 				#if Input.is_action_just_pressed("ui_accept"):
@@ -134,6 +135,7 @@ func close_reward():
 
 
 func _on_fishing_lure_successful_landing():
+	print("success")
 	if game_manager.cur_state == game_manager.PLAY_STATE.CASTING:
 		game_manager.cur_state = game_manager.PLAY_STATE.CAST_SUCCEED
 

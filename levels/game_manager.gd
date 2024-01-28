@@ -63,4 +63,3 @@ func update_time_ui():
 	$TimeOfDayText.set_text(str(time_hour_formatted) + ":" + str(time_minutes).pad_zeros(2) + TimeEnd)
 	
 	
-

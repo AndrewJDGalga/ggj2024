@@ -51,5 +51,6 @@ scale = Vector2(0.5, 0.5)
 
 [node name="GolfMeterV" parent="." instance=ExtResource("6_6jjox")]
 
+[connection signal="successful_landing" from="fishing_lure" to="." method="_on_fishing_lure_successful_landing"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="has_failed" from="FishCatchMeter" to="." method="_on_fish_catch_meter_has_failed"]
