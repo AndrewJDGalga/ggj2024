@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://crmbqldvypv24"]
+[gd_scene load_steps=10 format=3 uid="uid://crmbqldvypv24"]
 
 [ext_resource type="Script" path="res://entities/curtis.gd" id="1_7lmy5"]
 [ext_resource type="PackedScene" uid="uid://b6eadiimgwj4m" path="res://components/fishing_lure.tscn" id="2_gos2j"]
 [ext_resource type="PackedScene" uid="uid://cqqjao5hwaxgy" path="res://UI/reward_ui.tscn" id="2_m1w8c"]
 [ext_resource type="PackedScene" uid="uid://en2xq5wxjh10" path="res://UI/balance_meter.tscn" id="3_kl8f3"]
+[ext_resource type="PackedScene" uid="uid://12ecr48on814" path="res://UI/GolfMeter/golf_meter_h.tscn" id="5_vqemi"]
+[ext_resource type="PackedScene" uid="uid://b3p6yc14m14xh" path="res://UI/GolfMeter/golf_meter_v.tscn" id="6_6jjox"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7g544"]
 radius = 24.0
@@ -44,6 +46,10 @@ offset_top = 5.0
 offset_right = 359.0
 offset_bottom = 154.0
 scale = Vector2(0.5, 0.5)
+
+[node name="GolfMeterH" parent="." instance=ExtResource("5_vqemi")]
+
+[node name="GolfMeterV" parent="." instance=ExtResource("6_6jjox")]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="has_failed" from="FishCatchMeter" to="." method="_on_fish_catch_meter_has_failed"]

@@ -33,7 +33,6 @@ func fail_check():
 	if cur_point_pos > 1.0 || \
 		cur_point_pos < 0.0:
 		emit_signal("has_failed")
-		#print("out of bounds")
 
 func stop():
 	is_running = false

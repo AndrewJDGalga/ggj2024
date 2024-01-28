@@ -3,6 +3,8 @@ extends Area2D
 @onready var lure = $fishing_lure
 @onready var anim_player = $AnimationPlayer
 @onready var catch_meter = $FishCatchMeter
+@onready var golf_meter_h = $GolfMeterH
+@onready var golf_meter_v = $GolfMeterV
 @export var game_manager:Game_Manager
 @export var turn_speed := 2.0
 ##rotation limit for player's line + accuracy mod
@@ -19,6 +21,9 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	catch_meter.set_meter_text("Balance the line!")
+	catch_meter.visible = false
+	golf_meter_h.visible = false
+	golf_meter_v.visible = false
 
 func _physics_process(delta):
 	if game_manager:
@@ -47,6 +52,7 @@ func _physics_process(delta):
 				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
 			game_manager.PLAY_STATE.CAST_SUCCEED:
 				print("cast success!")
+				catch_meter.visible = true
 				game_manager.cur_state = game_manager.PLAY_STATE.CATCHING
 			game_manager.PLAY_STATE.CATCHING:
 				if Input.is_action_pressed("action1"):
@@ -71,15 +77,19 @@ func _physics_process(delta):
 				if (Input.is_action_pressed("action2")):
 					reward_instance.scroll_down()
 			game_manager.PLAY_STATE.CATCH_FAIL:
-				pass
+				print("catch fail")
+				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
 			game_manager.PLAY_STATE.TEST:
-				#pass
-				if Input.is_action_just_pressed("ui_accept"):
-					catch_meter.start(0.3, 0.2)
-				if Input.is_action_pressed("action1"):
-					catch_meter.push_point(1, 2.0, delta)
-				if Input.is_action_pressed("action2"):
-					catch_meter.push_point(-1, 2.0, delta)
+				golf_meter_h.visible = true
+				golf_meter_v.visible = true
+				
+				
+				#if Input.is_action_just_pressed("ui_accept"):
+					#catch_meter.start(0.3, 0.2)
+				#if Input.is_action_pressed("action1"):
+					#catch_meter.push_point(1, 2.0, delta)
+				#if Input.is_action_pressed("action2"):
+					#catch_meter.push_point(-1, 2.0, delta)
 				#cur_throw_power = -50
 				#anim_player.play("toss_lure")
 				#game_manager.cur_state = game_manager.PLAY_STATE.CASTING
