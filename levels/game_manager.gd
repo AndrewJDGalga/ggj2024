@@ -10,8 +10,8 @@ var time_hour:int = 0
 var time_minutes:int = 0
 var time_am = true
 @export_group("TimeSystem")
-@export var day_length = 30
-@export var hour_start = 12
+@export var day_length = 60
+@export var hour_start = 6
 @export var hour_end = 18
 
 @export_group("UI")
@@ -77,7 +77,8 @@ func _ready():
 	var anim_length = TimePlayer.current_animation_length
 	TimePlayer.seek(float(hour_start)/24 * anim_length, true)
 	
-	TimePlayer.set_speed_scale((24 / float(day_length))/anim_length)
+	TimePlayer.set_speed_scale(anim_length / (24 / (hour_end-hour_start) * day_length))
+	
 	
 	
 func game_over():
