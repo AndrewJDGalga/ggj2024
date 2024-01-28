@@ -1,9 +1,12 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://dhke5qpi5pd0n"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://dhke5qpi5pd0n"]
 
 [ext_resource type="Script" path="res://items/ItemData.gd" id="1_ueawb"]
+[ext_resource type="Texture2D" uid="uid://blrkv2kf5i87u" path="res://assets/art/Beach Can.png" id="1_wt612"]
 
 [resource]
 script = ExtResource("1_ueawb")
-item_name = ""
-item_desc = ""
+item_name = "Random Item"
+item_desc = "Some description of the item"
+item_texture = ExtResource("1_wt612")
 score = 25
+rarity = 10

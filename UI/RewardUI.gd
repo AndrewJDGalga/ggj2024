@@ -11,8 +11,11 @@ func _ready():
 
 # initializes the reward with the specified elements
 func set_reward(item_data:ItemData):
-	$VBoxContainer/RewardText.set_text("[center]" + str(item_data.item_name) + "[/center]")
+	var desc = $VBoxContainer/RewardDescription
+	$VBoxContainer/RewardText.set_text("[center]" + str(item_data.item_desc) + "[/center]")
 	$VBoxContainer/CenterContainer/RewardImage.set_texture(item_data.item_texture)
+	var FormatText = "%s\nRarity:%s\nWeight:%s\nScore:%s\n" % [item_data.item_name, item_data.rarity, item_data.item_weight, item_data.score]
+	desc.set_text("[center]" + FormatText + "[/center]")
 
 # scrolls the text up if available
 func scroll_up():

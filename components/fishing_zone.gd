@@ -5,8 +5,8 @@ extends Area2D
 @onready var anim_player = $AnimationPlayer
 var game_manager:Game_Manager
 var valid:bool = false
-##Range of difficulty, where 1 is hardest and 3 is easiest
-#@export_range(1,5) var ease_rating:int = 1
+##Range of difficulty, where 1 is hardest and 5 is easiest
+@export_range(1,5) var rarity:int = 1
 #@export var base_size:float = 16
 
 func _ready():
@@ -23,11 +23,9 @@ func set_enabled(enabled:bool):
 		anim_player.play("FadeRipple")
 
 
-func _process(delta):
-	if valid:
-		if game_manager.cur_state == game_manager.PLAY_STATE.CASTING:
-			set_enabled(false)
-			$ZoneCooldown.start()
+func set_on_cooldown():
+	set_enabled(false)
+	$ZoneCooldown.start()
 
 
 func _on_area_entered(_area):
