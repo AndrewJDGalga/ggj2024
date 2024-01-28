@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://cyg8fjt7rbtts"]
+
+[ext_resource type="Script" path="res://items/ItemData.gd" id="1_nwxhg"]
+
+[resource]
+script = ExtResource("1_nwxhg")
+item_name = "PDR"
+item_desc = "Fur tat classic frashwater taste."
+score = 5
+rarity = 5
