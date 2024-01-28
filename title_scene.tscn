@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://brnjnecmh4h7r"]
+[gd_scene load_steps=6 format=3 uid="uid://brnjnecmh4h7r"]
 
 [ext_resource type="Script" path="res://Title Scene.gd" id="1_jc1rs"]
 [ext_resource type="Texture2D" uid="uid://bxmv08jhuwft3" path="res://assets/art/pickedMedia1.png" id="2_6iywx"]
 [ext_resource type="FontFile" uid="uid://cket3wlt7p1m7" path="res://assets/SuperMario256.ttf" id="3_rkj5n"]
+[ext_resource type="AudioStream" uid="uid://dmbte2gtk6ch8" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Music/Gameplay Music/Dumb_Banjo_Song_extended_2.wav" id="4_w122a"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_v0se6"]
 font = ExtResource("3_rkj5n")
@@ -43,6 +44,10 @@ text = "Play"
 label_settings = SubResource("LabelSettings_v0se6")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_w122a")
+autoplay = true
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Play" to="Play" method="_on_pressed"]

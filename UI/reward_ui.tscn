@@ -28,6 +28,14 @@ text = "[center]Lorem Ipsum is simply dummy text of the printing and typesetting
 layout_mode = 2
 
 [node name="RewardImage" type="TextureRect" parent="VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("2_kge6w")
-stretch_mode = 2
+expand_mode = 5
+stretch_mode = 5
+
+[node name="RewardDescription" type="RichTextLabel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+bbcode_enabled = true
+text = "[center]test[/center]"

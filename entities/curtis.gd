@@ -12,13 +12,11 @@ extends Area2D
 @export var line_degree_limit := 45.0
 @export var pow_gain_rate := 300.0
 @export var accuracy_gain_rate := 40.0
-@export var reward_ui:PackedScene
-var reward_instance:Node
 var cur_throw_power := 0.0
 var cur_accuracy := 0.0
 #tied to pow and accuracy gain
 var gain_attribute := true
-var rng = RandomNumberGenerator.new()
+var gave_loot = false
 
 func _ready():
 	catch_meter.set_meter_text("Balance the line!")
@@ -69,7 +67,7 @@ func _physics_process(delta):
 					accuracy_gain_rate, delta)
 				anim_player.play("toss_lure")
 			game_manager.PLAY_STATE.CASTING:
-				pass
+				game_manager.cur_state = game_manager.PLAY_STATE.CATCH_SUCCEED
 				#lure.position.y = cur_throw_power
 				#lure.position.x = cur_accuracy
 			game_manager.PLAY_STATE.CATCH_FAIL:
@@ -86,19 +84,20 @@ func _physics_process(delta):
 				if Input.is_action_pressed("action2"):
 					catch_meter.push_point(-1, 2.0, delta)
 			game_manager.PLAY_STATE.CATCH_SUCCEED:
-				var item_data = load("res://items/Salmon.tres")
-				var item_instance = item_data.duplicate()
-				item_instance.item_weight = rng.randi_range(0,100)
-				display_reward(item_instance)
+				if (!gave_loot):
+					gave_loot = true
+					game_manager.create_reward(lure.current_puddle.rarity)
+					lure.current_puddle.set_on_cooldown()
 				# close window / continue
-				if (Input.is_action_pressed("action1") && Input.is_action_pressed("action2")):
-					close_reward()
+				if (Input.is_action_pressed("action3")):
+					game_manager.close_reward()
+					gave_loot = false
 					game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
 				# scrolling functionality
 				if (Input.is_action_pressed("action1")):
-					reward_instance.scroll_up()
+					game_manager.reward_instance.scroll_up()
 				if (Input.is_action_pressed("action2")):
-					reward_instance.scroll_down()
+					game_manager.reward_instance.scroll_down()
 			game_manager.PLAY_STATE.CATCH_FAIL:
 				#TODO fail notice
 				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
@@ -126,20 +125,9 @@ func turn_for_casting(delta):
 func _on_animation_player_animation_finished(_anim_name):
 	if game_manager.cur_state == game_manager.PLAY_STATE.CASTING:
 		game_manager.cur_state = game_manager.PLAY_STATE.CATCH_FAIL
-		
-func display_reward(item_data:ItemData):
-	if (!is_instance_valid(reward_instance)):
-		reward_instance = reward_ui.instantiate()
-		add_child(reward_instance)
-		
-	reward_instance.set_reward(item_data)
-
-func close_reward():
-	remove_child(reward_instance)
 
 
-func _on_fishing_lure_successful_landing():
-	print("success")
+func _on_fishing_lure_successful_landing(hit_area):
 	if game_manager.cur_state == game_manager.PLAY_STATE.CASTING:
 		game_manager.cur_state = game_manager.PLAY_STATE.CAST_SUCCEED
 
