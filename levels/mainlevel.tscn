@@ -27,23 +27,29 @@ offset_bottom = 747.0
 
 [node name="fishing_zones" type="Node2D" parent="."]
 
-[node name="fishing_zone" parent="fishing_zones" instance=ExtResource("4_7dt12")]
+[node name="fishing_zone" parent="fishing_zones" node_paths=PackedStringArray("game_manager") instance=ExtResource("4_7dt12")]
 position = Vector2(126, 489)
+game_manager = NodePath("../..")
 
-[node name="fishing_zone2" parent="fishing_zones" instance=ExtResource("4_7dt12")]
+[node name="fishing_zone2" parent="fishing_zones" node_paths=PackedStringArray("game_manager") instance=ExtResource("4_7dt12")]
 position = Vector2(97, 132)
+game_manager = NodePath("../..")
 
-[node name="fishing_zone3" parent="fishing_zones" instance=ExtResource("4_7dt12")]
+[node name="fishing_zone3" parent="fishing_zones" node_paths=PackedStringArray("game_manager") instance=ExtResource("4_7dt12")]
 position = Vector2(267, 401)
+game_manager = NodePath("../..")
 
-[node name="fishing_zoneLv2" parent="fishing_zones" instance=ExtResource("7_qx8l1")]
+[node name="fishing_zoneLv2" parent="fishing_zones" node_paths=PackedStringArray("game_manager") instance=ExtResource("7_qx8l1")]
 position = Vector2(412, 138)
+game_manager = NodePath("../..")
 
-[node name="fishing_zone_lv3" parent="fishing_zones" instance=ExtResource("8_iupue")]
+[node name="fishing_zone_lv3" parent="fishing_zones" node_paths=PackedStringArray("game_manager") instance=ExtResource("8_iupue")]
 position = Vector2(195, 263)
+game_manager = NodePath("../..")
 
-[node name="fishing_zonelv4" parent="fishing_zones" instance=ExtResource("9_ib4ob")]
+[node name="fishing_zonelv4" parent="fishing_zones" node_paths=PackedStringArray("game_manager") instance=ExtResource("9_ib4ob")]
 position = Vector2(446, 377)
+game_manager = NodePath("../..")
 
 [node name="Curtis" parent="." node_paths=PackedStringArray("game_manager", "tut_text") instance=ExtResource("1_bnq6j")]
 position = Vector2(300, 744)
