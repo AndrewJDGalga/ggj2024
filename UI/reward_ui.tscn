@@ -11,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pn2rr")
+base_desc_text = "Golly, you caught a {size} {name}! Weighing {weight}lbs and a value of {score} points!"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0

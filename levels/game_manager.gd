@@ -27,7 +27,7 @@ var score:int
 
 @export_group("Audio")
 @onready var audiostream = $AudioStreamPlayer
-@export var background_music1:AudioStream
+@export var background_music1:AudioStream 
 @export var background_music2:AudioStream
 @export var ambientTrack:AudioStream
 @export var success:AudioStream
@@ -112,7 +112,7 @@ func display_reward(item_data:ItemData):
 func create_reward(rarity:int):
 	var valid_items:Array[ItemData]
 	for item in Items:
-		if (item.rarity >= rarity):
+		if (item.rarity == rarity || item.rarity == rarity-1 || item.rarity == rarity+1):
 			valid_items.append(item)
 	
 	var item_data = valid_items.pick_random()

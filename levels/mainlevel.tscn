@@ -1,19 +1,31 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2pyfkcc5qevs"]
+[gd_scene load_steps=27 format=3 uid="uid://c2pyfkcc5qevs"]
 
 [ext_resource type="PackedScene" uid="uid://crmbqldvypv24" path="res://entities/curtis.tscn" id="1_bnq6j"]
 [ext_resource type="Script" path="res://levels/game_manager.gd" id="1_tj3jl"]
 [ext_resource type="AudioStream" uid="uid://crb2pcfx5w4ww" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Item Catch_/Cartoon/ESM_Vibrant_Game_Drop_Hover_up_1_Arcade_Cartoon_Quirky_Comedy_Comedic_Kid_Childish_Fun_Bouncy.wav" id="2_2t4t8"]
-[ext_resource type="AudioStream" uid="uid://8u2rua8bmgr8" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line drop_/Cartoon/ESM_Vibrant_Game_Water_Drop_Game_Touch_1_Arcade_Cartoon_Quirky_Comedy_Comedic_Kid_Childish_Fun_Bouncy.wav" id="2_w58uo"]
+[ext_resource type="AudioStream" uid="uid://8h4ipubfc21b" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Misc/Cartoon/FF_CRT_sfx_boing_three_eye_pop_low.wav" id="3_1c5o7"]
 [ext_resource type="PackedScene" uid="uid://c16o0epi7dc3" path="res://UI/tutorial_text.tscn" id="3_mhy6w"]
 [ext_resource type="PackedScene" uid="uid://bgouue1wlme4b" path="res://components/fishing_zone.tscn" id="4_7dt12"]
-[ext_resource type="AudioStream" uid="uid://dg2u3tf4h6vd6" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line drop_/Cartoon/UM_fx_one_shot_water_drop_cartoon_160.wav" id="4_y8kgo"]
+[ext_resource type="AudioStream" uid="uid://desqtwcsnwejd" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line Cast_/Cartoon/FF_CRT_sfx_siren_slip_wee_d.wav" id="4_wem3t"]
 [ext_resource type="Resource" uid="uid://dhke5qpi5pd0n" path="res://items/Salmon.tres" id="5_l7l2m"]
-[ext_resource type="PackedScene" uid="uid://pqeyjyyld5oc" path="res://levels/tilemaps/beachtiles.tscn" id="6_oob1l"]
+[ext_resource type="Resource" uid="uid://bsedf2j7em8u8" path="res://items/CatFish.tres" id="5_q5lcc"]
+[ext_resource type="Resource" uid="uid://2qdgwm5xoya2" path="res://items/CrocShoe.tres" id="6_y2vfa"]
+[ext_resource type="AudioStream" uid="uid://dekrrbjinxf23" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Comedy/HumanFartSmall_S08HU.230.wav" id="7_7k0f1"]
 [ext_resource type="PackedScene" uid="uid://cjul85ld57hih" path="res://components/fishing_zone_lv_2.tscn" id="7_qx8l1"]
+[ext_resource type="Resource" path="res://items/GoldTooth.tres" id="7_qy2ml"]
+[ext_resource type="AudioStream" uid="uid://bf4egleg4giet" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Comedy/human_trumpet_fart_e_09.wav" id="8_g6nwn"]
 [ext_resource type="PackedScene" uid="uid://drk8622ylr3vq" path="res://components/fishing_zone_lv_3.tscn" id="8_iupue"]
+[ext_resource type="Resource" uid="uid://ci7cb5hibxuh2" path="res://items/JesusFish.tres" id="8_ugcjr"]
+[ext_resource type="AudioStream" uid="uid://b74750qfekqgi" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Comedy/wet_fart_sample.wav" id="9_68qq7"]
+[ext_resource type="Resource" uid="uid://3yusqhb0pf0f" path="res://items/Moonshine.tres" id="9_acgq3"]
 [ext_resource type="PackedScene" uid="uid://cdmu8dmjkentv" path="res://components/fishing_zonelv_4.tscn" id="9_ib4ob"]
+[ext_resource type="Resource" uid="uid://b1j3yfji02jma" path="res://items/OldBoot.tres" id="10_s1mgc"]
+[ext_resource type="AudioStream" uid="uid://c4huleaavregg" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Music/Gameplay Music/GGL_-_Redneck_Fishing_3.wav" id="10_upslj"]
 [ext_resource type="PackedScene" uid="uid://cqqjao5hwaxgy" path="res://UI/reward_ui.tscn" id="11_8b3e7"]
+[ext_resource type="Resource" uid="uid://l8v0abfjogvi" path="res://items/PBR.tres" id="11_gff6f"]
 [ext_resource type="PackedScene" uid="uid://vxm4pou8n1l8" path="res://UI/score_summary.tscn" id="11_mu4n3"]
+[ext_resource type="Resource" uid="uid://crgbgb4c18yjj" path="res://items/RetroCassette.tres" id="12_3d2bq"]
+[ext_resource type="Resource" uid="uid://b18tte1fb6whk" path="res://items/Smokes.tres" id="14_fqy66"]
 
 [node name="mainlevel" type="Node2D" node_paths=PackedStringArray("ScoreText", "TimeText", "EndGameScene", "reward_instance")]
 script = ExtResource("1_tj3jl")
@@ -21,16 +33,21 @@ ScoreText = NodePath("ScoreUI")
 TimeText = NodePath("TimeOfDayText")
 EndGameScene = NodePath("score_summary")
 success = ExtResource("2_2t4t8")
-fail = ExtResource("2_w58uo")
-cast = ExtResource("4_y8kgo")
-Items = Array[Resource("res://items/ItemData.gd")]([ExtResource("5_l7l2m")])
+fail = ExtResource("3_1c5o7")
+cast = ExtResource("4_wem3t")
+fart1 = ExtResource("7_7k0f1")
+fart2 = ExtResource("8_g6nwn")
+fart3 = ExtResource("9_68qq7")
+Items = Array[Resource("res://items/ItemData.gd")]([ExtResource("5_q5lcc"), ExtResource("6_y2vfa"), ExtResource("7_qy2ml"), ExtResource("8_ugcjr"), ExtResource("9_acgq3"), ExtResource("10_s1mgc"), ExtResource("11_gff6f"), ExtResource("12_3d2bq"), ExtResource("5_l7l2m"), ExtResource("14_fqy66")])
 reward_instance = NodePath("RewardUI")
 
 [node name="Beachtiles" parent="." instance=ExtResource("6_oob1l")]
 position = Vector2(0, 764)
 layer_0/tile_data = PackedInt32Array(196611, 2, 0, 196621, 2, 0, 196631, 2, 0)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_upslj")
+autoplay = true
 
 [node name="TutorialText" parent="." instance=ExtResource("3_mhy6w")]
 offset_left = 1.0
@@ -43,6 +60,7 @@ offset_bottom = 747.0
 [node name="fishing_zone" parent="fishing_zones" node_paths=PackedStringArray("game_manager") instance=ExtResource("4_7dt12")]
 position = Vector2(126, 489)
 game_manager = NodePath("../..")
+rarity = 2
 
 [node name="fishing_zone2" parent="fishing_zones" node_paths=PackedStringArray("game_manager") instance=ExtResource("4_7dt12")]
 position = Vector2(97, 132)
@@ -55,14 +73,17 @@ game_manager = NodePath("../..")
 [node name="fishing_zoneLv2" parent="fishing_zones" node_paths=PackedStringArray("game_manager") instance=ExtResource("7_qx8l1")]
 position = Vector2(412, 138)
 game_manager = NodePath("../..")
+rarity = 3
 
 [node name="fishing_zone_lv3" parent="fishing_zones" node_paths=PackedStringArray("game_manager") instance=ExtResource("8_iupue")]
 position = Vector2(195, 263)
 game_manager = NodePath("../..")
+rarity = 4
 
 [node name="fishing_zonelv4" parent="fishing_zones" node_paths=PackedStringArray("game_manager") instance=ExtResource("9_ib4ob")]
 position = Vector2(446, 377)
 game_manager = NodePath("../..")
+rarity = 5
 
 [node name="Curtis" parent="." node_paths=PackedStringArray("game_manager", "tut_text") instance=ExtResource("1_bnq6j")]
 position = Vector2(300, 744)
@@ -97,3 +118,5 @@ offset_left = 61.0
 offset_top = 194.0
 offset_right = 61.0
 offset_bottom = 194.0
+
+[node name="AudioStreamSFX" type="AudioStreamPlayer" parent="."]

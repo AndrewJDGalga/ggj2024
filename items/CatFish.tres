@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://rfwppf14rl0w"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bsedf2j7em8u8"]
 
 [ext_resource type="Texture2D" uid="uid://bahn3nhmn1fcp" path="res://assets/art/Cat fish.png" id="1_fo2wo"]
 [ext_resource type="Script" path="res://items/ItemData.gd" id="1_gv6nf"]
