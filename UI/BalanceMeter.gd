@@ -18,22 +18,22 @@ func _ready():
 
 func _physics_process(delta):
 	if is_running:
-		#step_debug_meter()
 		auto_move_point(delta)
 		fail_check()
 
 func push_point(dir:float, slow:float, dt:float):
-	print(cur_point_pos)
 	cur_point_pos = set_meter_point_percent(cur_point_pos + (dt/slow)*dir)
-	print(cur_point_pos)
 
 func auto_move_point(delta):
 	cur_point_pos = set_meter_point_percent(cur_point_pos + delta/auto_slide_slow * pull_dir)
 
 func fail_check():
-	if cur_point_pos > meter.get_size().x || \
-		cur_point_pos < (meter.get_size().x - meter.get_size().x/2):
+	print(meter.get_size().x)
+	print(cur_point_pos)
+	if cur_point_pos > 1.0 || \
+		cur_point_pos < 0.0:
 		emit_signal("has_failed")
+		#print("out of bounds")
 
 func stop():
 	is_running = false
@@ -64,7 +64,7 @@ func set_balance_meter_time(time: float):
 	
 # sets the meter point position relative to the bar it is attached to. Range 0-1
 func set_meter_point_percent(percent)->float:
-	var meter_size = $BalanceMeterSafeProgressBar.get_size()
+	var meter_size = meter.get_size()
 	var meter_point_size = $BalanceMeterSafeProgressBar/BalanceMeterPoint.get_size()
 	var new_position = percent * (meter_size.x - meter_point_size.x/2)
 	#cur_point_pos = percent
