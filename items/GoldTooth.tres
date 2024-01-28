@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://de2vijotixh4k"]
+
+[ext_resource type="Texture2D" uid="uid://bjhflf4cyeh4e" path="res://assets/art/Gold Tootg.png" id="1_q0lqo"]
+[ext_resource type="Script" path="res://items/ItemData.gd" id="1_ye2r3"]
+
+[resource]
+script = ExtResource("1_ye2r3")
+item_name = "Gold Tooth"
+item_desc = "Heh Heh Heh! Few mor'a these an' I can fix up my purty smile."
+item_texture = ExtResource("1_q0lqo")
+score = 1
+rarity = 1
