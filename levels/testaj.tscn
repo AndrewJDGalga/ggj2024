@@ -47,6 +47,10 @@ offset_bottom = 59.0
 text = "Time Of Day"
 
 [node name="TimeBackground" parent="." instance=ExtResource("4_xnr0i")]
+offset_left = 46.0
+offset_top = 27.0
+offset_right = 558.0
+offset_bottom = 539.0
 
 [node name="score_summary" parent="." instance=ExtResource("5_rgktf")]
 visible = false

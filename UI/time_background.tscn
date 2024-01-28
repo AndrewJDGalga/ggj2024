@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1wycb388itey"]
 
-[ext_resource type="Texture2D" uid="uid://vlh1uirlb4kh" path="res://UI/Icons/MeterPoint.png" id="1_1m85o"]
+[ext_resource type="Texture2D" uid="uid://bejm6eq7gkchx" path="res://assets/art/Sun_and_moon.png" id="1_1sxlc"]
 
 [sub_resource type="Animation" id="Animation_qu365"]
 resource_name = "TimeOfDay"
@@ -16,7 +16,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 6.28319]
+"values": [-3.14159, 3.14159]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jqub8"]
@@ -25,13 +25,13 @@ _data = {
 }
 
 [node name="TimeBackground" type="TextureRect"]
-visible = false
 offset_left = 98.0
 offset_top = 82.0
 offset_right = 521.0
 offset_bottom = 488.0
-pivot_offset = Vector2(221, 203)
-texture = ExtResource("1_1m85o")
+rotation = -3.14159
+pivot_offset = Vector2(256, 256)
+texture = ExtResource("1_1sxlc")
 stretch_mode = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

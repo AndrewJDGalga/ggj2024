@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c2pyfkcc5qevs"]
+[gd_scene load_steps=24 format=3 uid="uid://c2pyfkcc5qevs"]
 
 [ext_resource type="PackedScene" uid="uid://crmbqldvypv24" path="res://entities/curtis.tscn" id="1_bnq6j"]
 [ext_resource type="Script" path="res://levels/game_manager.gd" id="1_tj3jl"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://vxm4pou8n1l8" path="res://UI/score_summary.tscn" id="11_mu4n3"]
 [ext_resource type="Resource" uid="uid://buf6rp0dhudy1" path="res://items/RetroCassette.tres" id="12_3d2bq"]
 [ext_resource type="Resource" uid="uid://b01kj0i0r4vrc" path="res://items/Smokes.tres" id="14_fqy66"]
+[ext_resource type="PackedScene" uid="uid://b1wycb388itey" path="res://UI/time_background.tscn" id="23_8jsgw"]
 
 [node name="mainlevel" type="Node2D" node_paths=PackedStringArray("ScoreText", "TimeText", "EndGameScene", "reward_instance")]
 script = ExtResource("1_tj3jl")
@@ -33,6 +34,13 @@ fail = ExtResource("2_w58uo")
 cast = ExtResource("4_y8kgo")
 Items = Array[Resource("res://items/ItemData.gd")]([ExtResource("5_q5lcc"), ExtResource("6_y2vfa"), ExtResource("7_qy2ml"), ExtResource("8_ugcjr"), ExtResource("9_acgq3"), ExtResource("10_s1mgc"), ExtResource("11_gff6f"), ExtResource("12_3d2bq"), ExtResource("5_l7l2m"), ExtResource("14_fqy66")])
 reward_instance = NodePath("RewardUI")
+
+[node name="TimeBackground" parent="." instance=ExtResource("23_8jsgw")]
+offset_left = 51.0
+offset_top = -41.0
+offset_right = 563.0
+offset_bottom = 471.0
+rotation = 3.14159
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

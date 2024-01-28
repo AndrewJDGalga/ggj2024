@@ -69,15 +69,16 @@ func _ready():
 	add_child(day_end_timer)
 	day_end_timer.start()
 	
-	#update_time_ui()
+	update_time_ui()
 	
-	#TimePlayer.play("TimeOfDay")
-	#TimePlayer.advance(0)
-	#
-	#var anim_length = TimePlayer.current_animation_length
-	#TimePlayer.seek(float(hour_start)/24 * anim_length, true)
-	#
-	#TimePlayer.set_speed_scale(anim_length/day_length)
+	TimePlayer.play("TimeOfDay")
+	TimePlayer.advance(0)
+	
+	var anim_length = TimePlayer.current_animation_length
+	TimePlayer.seek(float(hour_start)/24 * anim_length, true)
+	
+	TimePlayer.set_speed_scale((24 / float(day_length))/anim_length)
+	
 	
 func game_over():
 	$score_summary.activate_scorescreen(score)
@@ -91,14 +92,14 @@ func increment_daytime():
 	time_am = false if time_hour >= 12 || time_hour == 0 else true
 	time_hour = time_hour % 24
 	
-	#update_time_ui()
+	update_time_ui()
 	
 func update_time_ui():
 	var TimeEnd = "AM" if time_am else "PM"
 	var time_hour_formatted = time_hour if time_hour < 13 else time_hour - 12
 	if (time_hour < 12):
 		time_hour_formatted += 1
-	ScoreText.set_text(str(time_hour_formatted) + ":" + str(time_minutes).pad_zeros(2) + TimeEnd)
+	TimeText.set_text(str(time_hour_formatted) + ":" + str(time_minutes).pad_zeros(2) + TimeEnd)
 
 func play_fail():
 	audio.stop()
