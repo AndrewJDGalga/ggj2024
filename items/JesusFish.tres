@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ctc6k3cd3byl0"]
+
+[ext_resource type="Script" path="res://items/ItemData.gd" id="1_acllm"]
+[ext_resource type="Texture2D" uid="uid://ks2fkev1pjom" path="res://assets/art/Jesus Fish.png" id="1_kjpwj"]
+
+[resource]
+script = ExtResource("1_acllm")
+item_name = "Jesus Fish Token"
+item_desc = "OH YEAH! An Arkie-A-logical find!"
+item_texture = ExtResource("1_kjpwj")
+score = 2
+rarity = 0
