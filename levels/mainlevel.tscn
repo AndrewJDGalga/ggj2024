@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://c2pyfkcc5qevs"]
+[gd_scene load_steps=29 format=3 uid="uid://c2pyfkcc5qevs"]
 
 [ext_resource type="PackedScene" uid="uid://crmbqldvypv24" path="res://entities/curtis.tscn" id="1_bnq6j"]
 [ext_resource type="Script" path="res://levels/game_manager.gd" id="1_tj3jl"]
@@ -24,9 +24,10 @@
 [ext_resource type="PackedScene" uid="uid://cqqjao5hwaxgy" path="res://UI/reward_ui.tscn" id="11_8b3e7"]
 [ext_resource type="Resource" uid="uid://cyg8fjt7rbtts" path="res://items/PBR.tres" id="11_gff6f"]
 [ext_resource type="PackedScene" uid="uid://vxm4pou8n1l8" path="res://UI/score_summary.tscn" id="11_mu4n3"]
-[ext_resource type="Resource" uid="uid://crgbgb4c18yjj" path="res://items/RetroCassette.tres" id="12_3d2bq"]
-[ext_resource type="Resource" uid="uid://b18tte1fb6whk" path="res://items/Smokes.tres" id="14_fqy66"]
+[ext_resource type="Resource" uid="uid://buf6rp0dhudy1" path="res://items/RetroCassette.tres" id="12_3d2bq"]
+[ext_resource type="Resource" uid="uid://b01kj0i0r4vrc" path="res://items/Smokes.tres" id="14_fqy66"]
 [ext_resource type="PackedScene" uid="uid://b1wycb388itey" path="res://UI/time_background.tscn" id="23_8jsgw"]
+[ext_resource type="Theme" uid="uid://connr2v5ga1ky" path="res://DefaultTheme.tres" id="26_47lan"]
 
 [node name="mainlevel" type="Node2D" node_paths=PackedStringArray("ScoreText", "TimeText", "EndGameScene", "reward_instance")]
 script = ExtResource("1_tj3jl")
@@ -102,13 +103,15 @@ offset_left = 19.0
 offset_top = 15.0
 offset_right = 148.0
 offset_bottom = 65.0
-text = "Score: "
+theme = ExtResource("26_47lan")
+text = "Score: 0"
 
 [node name="TimeOfDayText" type="RichTextLabel" parent="."]
-offset_left = 460.0
-offset_top = 9.0
-offset_right = 589.0
-offset_bottom = 59.0
+offset_left = 451.0
+offset_top = 17.0
+offset_right = 580.0
+offset_bottom = 67.0
+theme = ExtResource("26_47lan")
 text = "Time Of Day"
 
 [node name="RewardUI" parent="." instance=ExtResource("11_8b3e7")]

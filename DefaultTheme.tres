@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://connr2v5ga1ky"]
+
+[ext_resource type="FontFile" uid="uid://cket3wlt7p1m7" path="res://assets/SuperMario256.ttf" id="1_al2v3"]
+
+[resource]
+default_font = ExtResource("1_al2v3")
+default_font_size = 15

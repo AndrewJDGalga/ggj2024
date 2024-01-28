@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqqjao5hwaxgy"]
+[gd_scene load_steps=4 format=3 uid="uid://cqqjao5hwaxgy"]
 
 [ext_resource type="Script" path="res://UI/RewardUI.gd" id="1_pn2rr"]
+[ext_resource type="Theme" uid="uid://connr2v5ga1ky" path="res://DefaultTheme.tres" id="2_6fmo8"]
 [ext_resource type="Texture2D" uid="uid://vlh1uirlb4kh" path="res://UI/Icons/MeterPoint.png" id="2_kge6w"]
 
 [node name="RewardUI" type="Control"]
@@ -13,30 +14,39 @@ grow_vertical = 2
 script = ExtResource("1_pn2rr")
 base_desc_text = "Golly, you caught a {size} {name}! Weighing {weight}lbs and a value of {score} points!"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_right = 488.0
-offset_bottom = 264.0
+offset_right = 499.0
+offset_bottom = 362.0
 
-[node name="RewardText" type="RichTextLabel" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 15.0
+offset_right = 488.0
+offset_bottom = 335.0
+
+[node name="RewardText" type="RichTextLabel" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+theme = ExtResource("2_6fmo8")
 bbcode_enabled = true
 text = "[center]Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.[/center]
 "
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
 
-[node name="RewardImage" type="TextureRect" parent="VBoxContainer/CenterContainer"]
+[node name="RewardImage" type="TextureRect" parent="Panel/VBoxContainer/CenterContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("2_kge6w")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="RewardDescription" type="RichTextLabel" parent="VBoxContainer"]
+[node name="RewardDescription" type="RichTextLabel" parent="Panel/VBoxContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+theme = ExtResource("2_6fmo8")
 bbcode_enabled = true
 text = "[center]test[/center]"
