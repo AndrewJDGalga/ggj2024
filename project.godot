@@ -13,7 +13,6 @@ config_version=5
 config/name="RedneckFishing"
 run/main_scene="res://levels/mainlevel.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [display]
 
@@ -60,3 +59,4 @@ action3={
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0, 0, 1, 1)

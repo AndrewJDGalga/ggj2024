@@ -5,6 +5,7 @@ var new_percent = 0 # testing var for debug
 
 # optional text label for the golf meter
 @onready var text_label : Label = $'../Label'
+@export var slide_speed = 2.5
 
 var cur_meter_percent:float = 0.0
 var meter_dir:int = 1
@@ -14,7 +15,7 @@ func _process(delta):
 	if is_running:
 		if cur_meter_percent >= 1.0 || cur_meter_percent < 0.0:
 			meter_dir *= -1
-		cur_meter_percent += (delta/2)*meter_dir
+		cur_meter_percent += (delta*slide_speed)*meter_dir
 		set_meter_point_percent(cur_meter_percent)
 
 func get_percent()->float:

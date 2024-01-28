@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c2pyfkcc5qevs"]
+[gd_scene load_steps=15 format=3 uid="uid://c2pyfkcc5qevs"]
 
 [ext_resource type="PackedScene" uid="uid://crmbqldvypv24" path="res://entities/curtis.tscn" id="1_bnq6j"]
 [ext_resource type="Script" path="res://levels/game_manager.gd" id="1_tj3jl"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bgouue1wlme4b" path="res://components/fishing_zone.tscn" id="4_7dt12"]
 [ext_resource type="AudioStream" uid="uid://dg2u3tf4h6vd6" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line drop_/Cartoon/UM_fx_one_shot_water_drop_cartoon_160.wav" id="4_y8kgo"]
 [ext_resource type="Resource" uid="uid://dhke5qpi5pd0n" path="res://items/Salmon.tres" id="5_l7l2m"]
+[ext_resource type="PackedScene" uid="uid://pqeyjyyld5oc" path="res://levels/tilemaps/beachtiles.tscn" id="6_oob1l"]
 [ext_resource type="PackedScene" uid="uid://cjul85ld57hih" path="res://components/fishing_zone_lv_2.tscn" id="7_qx8l1"]
 [ext_resource type="PackedScene" uid="uid://drk8622ylr3vq" path="res://components/fishing_zone_lv_3.tscn" id="8_iupue"]
 [ext_resource type="PackedScene" uid="uid://cdmu8dmjkentv" path="res://components/fishing_zonelv_4.tscn" id="9_ib4ob"]
@@ -24,6 +25,10 @@ fail = ExtResource("2_w58uo")
 cast = ExtResource("4_y8kgo")
 Items = Array[Resource("res://items/ItemData.gd")]([ExtResource("5_l7l2m")])
 reward_instance = NodePath("RewardUI")
+
+[node name="Beachtiles" parent="." instance=ExtResource("6_oob1l")]
+position = Vector2(0, 764)
+layer_0/tile_data = PackedInt32Array(196611, 2, 0, 196621, 2, 0, 196631, 2, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -63,6 +68,7 @@ game_manager = NodePath("../..")
 position = Vector2(300, 744)
 game_manager = NodePath("..")
 tut_text = NodePath("../TutorialText")
+line_degree_limit = 40.0
 
 [node name="ScoreUI" type="RichTextLabel" parent="."]
 offset_left = 19.0
