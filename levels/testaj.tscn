@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://eg50hifamjev"]
+[gd_scene load_steps=9 format=3 uid="uid://eg50hifamjev"]
 
 [ext_resource type="PackedScene" uid="uid://crmbqldvypv24" path="res://entities/curtis.tscn" id="1_7jb4x"]
 [ext_resource type="Script" path="res://levels/game_manager.gd" id="1_nvk7h"]
 [ext_resource type="PackedScene" uid="uid://bgouue1wlme4b" path="res://components/fishing_zone.tscn" id="3_6qolk"]
 [ext_resource type="Texture2D" uid="uid://vlh1uirlb4kh" path="res://UI/Icons/MeterPoint.png" id="4_jgtcq"]
 [ext_resource type="PackedScene" uid="uid://vxm4pou8n1l8" path="res://UI/score_summary.tscn" id="5_rgktf"]
+[ext_resource type="PackedScene" uid="uid://c16o0epi7dc3" path="res://UI/tutorial_text.tscn" id="6_11mxm"]
 
 [sub_resource type="Animation" id="Animation_qu365"]
 resource_name = "TimeOfDay"
@@ -49,9 +50,10 @@ offset_bottom = 693.0
 scale = Vector2(19.16, 3.56)
 color = Color(0.631373, 0.243137, 0, 1)
 
-[node name="Curtis" parent="." node_paths=PackedStringArray("game_manager") instance=ExtResource("1_7jb4x")]
+[node name="Curtis" parent="." node_paths=PackedStringArray("game_manager", "tut_text") instance=ExtResource("1_7jb4x")]
 position = Vector2(309, 713)
 game_manager = NodePath("..")
+tut_text = NodePath("../TutorialText")
 
 [node name="fishing_zone" parent="." instance=ExtResource("3_6qolk")]
 position = Vector2(307, 584)
@@ -93,3 +95,9 @@ offset_left = 62.0
 offset_top = 262.0
 offset_right = 102.0
 offset_bottom = 302.0
+
+[node name="TutorialText" parent="." instance=ExtResource("6_11mxm")]
+offset_left = 5.0
+offset_top = 657.0
+offset_right = 205.0
+offset_bottom = 721.0

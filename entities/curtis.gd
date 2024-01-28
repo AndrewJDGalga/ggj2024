@@ -6,6 +6,7 @@ extends Area2D
 @onready var accuracy_meter = $GolfMeterH
 @onready var pow_meter = $GolfMeterV
 @export var game_manager:Game_Manager
+@export var tut_text:ColorRect
 @export var turn_speed := 2.0
 ##rotation limit for player's line + accuracy mod
 @export var line_degree_limit := 45.0
@@ -24,6 +25,7 @@ func _ready():
 	catch_meter.visible = false
 	accuracy_meter.visible = false
 	pow_meter.visible = false
+	tut_text.visible = true
 
 func _physics_process(delta):
 	if game_manager:
@@ -34,10 +36,12 @@ func _physics_process(delta):
 				pow_meter.set_label("Power")
 				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
 			game_manager.PLAY_STATE.LINE_UP:
+				tut_text.set_label_text("Press Action1+Action2 when lined up.")
 				if Input.is_action_just_pressed("action1") && Input.is_action_just_pressed("action2"):
 					game_manager.cur_state = game_manager.PLAY_STATE.CASTING
 				turn_for_casting(delta)
 			game_manager.PLAY_STATE.POWER:
+				tut_text.set_label_text("Press Action1 to set Power.")
 				pow_meter.visible = true
 				pow_meter.start()
 				if Input.is_action_pressed("action1"):
@@ -49,6 +53,7 @@ func _physics_process(delta):
 					game_manager.lure_y_limit, 0, cur_throw_power, 
 					pow_gain_rate, delta)
 			game_manager.PLAY_STATE.ACCURACY:
+				tut_text.set_label_text("Press Action1 to set Accuracy.")
 				accuracy_meter.visible = true
 				accuracy_meter.start()
 				if Input.is_action_pressed("action1"):
@@ -66,10 +71,11 @@ func _physics_process(delta):
 				#TODO fail notice
 				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
 			game_manager.PLAY_STATE.CAST_SUCCEED:
-				print("cast success!")
+				#TODO success notice
 				catch_meter.visible = true
 				game_manager.cur_state = game_manager.PLAY_STATE.CATCHING
 			game_manager.PLAY_STATE.CATCHING:
+				tut_text.set_label_text("Press Action1 or Action2 to balance!")
 				if Input.is_action_pressed("action1"):
 					catch_meter.push_point(1, 2.0, delta)
 				if Input.is_action_pressed("action2"):

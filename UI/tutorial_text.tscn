@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://c16o0epi7dc3"]
+
+[ext_resource type="Script" path="res://UI/tutorial_text.gd" id="1_2h6k8"]
+
+[node name="TutorialText" type="ColorRect"]
+offset_right = 200.0
+offset_bottom = 64.0
+color = Color(0.141176, 0.141176, 0.141176, 1)
+script = ExtResource("1_2h6k8")
+
+[node name="instruction" type="Label" parent="."]
+offset_left = 1.0
+offset_right = 201.0
+offset_bottom = 49.0
+text = "Press action1 + action2 when lined up"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
