@@ -13,20 +13,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_0ghsm")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 2
-anchor_left = 0.011
-anchor_right = 0.852
-anchor_bottom = 0.095
-offset_left = -0.0130002
-offset_right = -152.916
-offset_bottom = -6.965
-text = "test"
-label_settings = ExtResource("1_bu7fm")
-horizontal_alignment = 1
-autowrap_mode = 2
-
-[node name="GolfMeter" parent="." node_paths=PackedStringArray("text_label") instance=ExtResource("2_twwn7")]
+[node name="GolfMeter" parent="." instance=ExtResource("2_twwn7")]
 custom_minimum_size = Vector2(33.16, 0)
 layout_mode = 2
 anchors_preset = 0
@@ -37,4 +24,16 @@ offset_right = 481.0
 offset_bottom = 52.0
 rotation = 1.5708
 pivot_offset = Vector2(0, 52)
-text_label = NodePath("../Label")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+anchor_left = 0.011
+anchor_right = 0.852
+anchor_bottom = 0.095
+offset_left = -0.0130002
+offset_right = -152.916
+offset_bottom = 40.06
+text = "test"
+label_settings = ExtResource("1_bu7fm")
+horizontal_alignment = 1
+autowrap_mode = 2

@@ -4,7 +4,7 @@ var TimeUnits = "seconds"
 var new_percent = 0 # testing var for debug
 
 # optional text label for the golf meter
-@export var text_label : Label
+@onready var text_label : Label = $'../Label'
 
 var cur_meter_percent:float = 0.0
 var meter_dir:int = 1
@@ -53,5 +53,7 @@ func set_safe_zone_percent(percent):
 
 # sets the text of the meter if valid
 func set_meter_text(text: String):
-	if (is_instance_valid(text_label)):
-		text_label.set_text(text)
+	print(text)
+	#if (text_label):
+	text_label.text = text
+	print(text_label.text)

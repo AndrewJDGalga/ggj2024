@@ -21,6 +21,7 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	catch_meter.set_meter_text("Balance the line!")
+	
 	catch_meter.visible = false
 	golf_meter_h.visible = false
 	golf_meter_v.visible = false
@@ -82,14 +83,16 @@ func _physics_process(delta):
 			game_manager.PLAY_STATE.TEST:
 				#lure.position.y = -200
 				golf_meter_h.visible = true
-				golf_meter_v.visible = false
+				golf_meter_v.visible = true
 				
 				if Input.is_action_just_pressed("ui_accept"):
-					golf_meter_h.start()
+					golf_meter_h.set_label("Accuracy")
+					golf_meter_v.set_label("Power")
+					golf_meter_v.start()
 				
 				if Input.is_action_just_pressed("action1"):
-					print(golf_meter_h.get_percent())
-					golf_meter_h.stop()
+					print(golf_meter_v.get_percent())
+					golf_meter_v.stop()
 					
 				
 				#if Input.is_action_just_pressed("ui_accept"):

@@ -86,6 +86,7 @@ libraries = {
 }
 
 [node name="score_summary" parent="." instance=ExtResource("5_rgktf")]
+visible = false
 offset_left = 62.0
 offset_top = 262.0
 offset_right = 102.0
