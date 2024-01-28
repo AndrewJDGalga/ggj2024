@@ -5,7 +5,7 @@ var new_percent = 0 # testing var for debug
 
 # optional text label for the golf meter
 @onready var text_label : Label = $'../Label'
-@export var slide_speed = 2.5
+@export var slide_speed = 0.8
 
 var cur_meter_percent:float = 0.0
 var meter_dir:int = 1
