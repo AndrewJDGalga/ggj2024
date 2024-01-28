@@ -39,14 +39,18 @@ func _physics_process(delta):
 				tut_text.set_label_text("Press Action3 when lined up.")
 				#if Input.is_action_just_pressed("action1") && Input.is_action_just_pressed("action2"):
 				if Input.is_action_just_pressed("action3"):
+					tut_text.set_label_text("Press Action1 to set Power.")
+					pow_meter.visible = true
+					pow_meter.start()
 					game_manager.cur_state = game_manager.PLAY_STATE.POWER
 				turn_for_casting(delta)
 			game_manager.PLAY_STATE.POWER:
-				tut_text.set_label_text("Press Action1 to set Power.")
-				pow_meter.visible = true
-				pow_meter.start()
+				lure.position.y = game_manager.lure_y_limit * pow_meter.get_percent()
 				if Input.is_action_pressed("action1"):
-					lure.position.y = game_manager.lure_y_limit * pow_meter.get_percent()
+					tut_text.set_label_text("Press Action2 to set Accuracy.")
+					accuracy_meter.visible = true
+					accuracy_meter.start()
+					#lure.position.y = game_manager.lure_y_limit * pow_meter.get_percent()
 					pow_meter.stop()
 					pow_meter.visible = false
 					game_manager.cur_state = game_manager.PLAY_STATE.ACCURACY
@@ -54,11 +58,8 @@ func _physics_process(delta):
 					game_manager.lure_y_limit, 0, cur_throw_power, 
 					pow_gain_rate, delta)
 			game_manager.PLAY_STATE.ACCURACY:
-				tut_text.set_label_text("Press Action2 to set Accuracy.")
-				accuracy_meter.visible = true
-				accuracy_meter.start()
+				lure.position.x = line_degree_limit * accuracy_meter.get_percent()
 				if Input.is_action_pressed("action2"):
-					lure.position.x = line_degree_limit * accuracy_meter.get_percent()
 					accuracy_meter.stop()
 					accuracy_meter.visible = false
 					game_manager.cur_state = game_manager.PLAY_STATE.CASTING
@@ -66,8 +67,10 @@ func _physics_process(delta):
 					-line_degree_limit, line_degree_limit, cur_accuracy, 
 					accuracy_gain_rate, delta)
 			game_manager.PLAY_STATE.CASTING:
-				lure.position.y = cur_throw_power
-				lure.position.x = cur_accuracy
+				#TODO determine if needed?
+				pass
+				#lure.position.y = cur_throw_power
+				#lure.position.x = cur_accuracy
 			game_manager.PLAY_STATE.CATCH_FAIL:
 				#TODO fail notice
 				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
