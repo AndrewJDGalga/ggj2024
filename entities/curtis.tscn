@@ -35,7 +35,6 @@ offset_right = 24.0
 offset_bottom = 24.0
 
 [node name="fishing_lure" parent="." instance=ExtResource("2_gos2j")]
-position = Vector2(0, -200)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -66,8 +65,6 @@ scale = Vector2(0.3, 0.3)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_1tjwj")
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
 [connection signal="successful_landing" from="fishing_lure" to="." method="_on_fishing_lure_successful_landing"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
