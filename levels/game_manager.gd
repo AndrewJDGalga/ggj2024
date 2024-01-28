@@ -112,7 +112,7 @@ func display_reward(item_data:ItemData):
 func create_reward(rarity:int):
 	var valid_items:Array[ItemData]
 	for item in Items:
-		if (item.rarity >= rarity):
+		if (item.rarity == rarity || item.rarity == rarity-1 || item.rarity == rarity+1):
 			valid_items.append(item)
 	
 	var item_data = valid_items.pick_random()
