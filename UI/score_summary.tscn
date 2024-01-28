@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://vxm4pou8n1l8"]
+
+[ext_resource type="Script" path="res://score_summary.gd" id="1_w053l"]
+[ext_resource type="Texture2D" uid="uid://c4pjdfbdy4fox" path="res://assets/art/Red Neck Fishing.png" id="2_fwh0m"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_dlxut"]
+blend_mode = 1
+
+[node name="score_summary" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_w053l")
+
+[node name="PanelBackground" type="Panel" parent="."]
+material = SubResource("CanvasItemMaterial_dlxut")
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(12.16, 8.36)
+
+[node name="LabelScore" type="Label" parent="."]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 21.0
+offset_right = 107.0
+offset_bottom = 44.0
+text = "Fishin' Score:"
+
+[node name="CurtisFront" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 66.0
+offset_right = 279.0
+offset_bottom = 322.0
+texture = ExtResource("2_fwh0m")
+
+[node name="RetryButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 197.0
+offset_right = 419.0
+offset_bottom = 228.0
+text = "Try Again?"
