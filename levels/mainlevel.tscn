@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2pyfkcc5qevs"]
+[gd_scene load_steps=12 format=3 uid="uid://c2pyfkcc5qevs"]
 
 [ext_resource type="PackedScene" uid="uid://crmbqldvypv24" path="res://entities/curtis.tscn" id="1_bnq6j"]
 [ext_resource type="Script" path="res://levels/game_manager.gd" id="1_tj3jl"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cjul85ld57hih" path="res://components/fishing_zone_lv_2.tscn" id="7_qx8l1"]
 [ext_resource type="PackedScene" uid="uid://drk8622ylr3vq" path="res://components/fishing_zone_lv_3.tscn" id="8_iupue"]
 [ext_resource type="PackedScene" uid="uid://cdmu8dmjkentv" path="res://components/fishing_zonelv_4.tscn" id="9_ib4ob"]
+[ext_resource type="AudioStream" uid="uid://c4huleaavregg" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Music/Gameplay Music/GGL_-_Redneck_Fishing_3.wav" id="10_upslj"]
 
 [node name="mainlevel" type="Node2D"]
 script = ExtResource("1_tj3jl")
@@ -17,7 +18,12 @@ success = ExtResource("2_2t4t8")
 fail = ExtResource("2_w58uo")
 cast = ExtResource("4_y8kgo")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_upslj")
+autoplay = true
+bus = &"Music"
+
+[node name="AudioStreamSFX" type="AudioStreamPlayer" parent="."]
 
 [node name="TutorialText" parent="." instance=ExtResource("3_mhy6w")]
 offset_left = 1.0
