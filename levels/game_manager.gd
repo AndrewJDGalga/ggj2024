@@ -11,8 +11,8 @@ var time_minutes:int = 0
 var time_am = true
 @export_group("TimeSystem")
 @export var day_length = 60
-@export var hour_start = 6
-@export var hour_end = 18
+@export var hour_start = 8
+@export var hour_end = 24
 
 @export_group("UI")
 @export var ScoreText:RichTextLabel

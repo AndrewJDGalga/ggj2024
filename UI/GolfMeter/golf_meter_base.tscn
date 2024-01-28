@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://UI/GolfMeter.gd" id="1_ao8yo"]
 [ext_resource type="Texture2D" uid="uid://cem1wu2lpxf6l" path="res://UI/ProgressBar/BarBg.png" id="1_mco4t"]
 [ext_resource type="Texture2D" uid="uid://63ptta7ehmre" path="res://UI/ProgressBar/BarProgress.png" id="2_drasb"]
-[ext_resource type="Texture2D" uid="uid://vlh1uirlb4kh" path="res://UI/Icons/MeterPoint.png" id="3_3th0w"]
+[ext_resource type="Texture2D" uid="uid://dcx20g2ha8j2" path="res://UI/Icons/Diamond.png" id="4_pkx8q"]
 
 [node name="GolfMeter" type="Control"]
 layout_mode = 3
@@ -30,4 +30,4 @@ layout_mode = 1
 offset_right = 93.0
 offset_bottom = 89.0
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_3th0w")
+texture = ExtResource("4_pkx8q")
