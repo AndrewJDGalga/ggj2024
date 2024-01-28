@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdmu8dmjkentv"]
+
+[ext_resource type="PackedScene" uid="uid://bgouue1wlme4b" path="res://components/fishing_zone.tscn" id="1_3hpuw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2txnx"]
+radius = 96.0
+
+[node name="fishing_zonelv4" instance=ExtResource("1_3hpuw")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+shape = SubResource("CircleShape2D_2txnx")
+
+[node name="AnimatedSpriteZone" parent="." index="1"]
+scale = Vector2(10, 10)

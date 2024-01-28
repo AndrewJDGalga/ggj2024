@@ -30,7 +30,6 @@ color = Color(0.631373, 0.243137, 0, 1)
 
 [node name="fishing_zone" parent="." instance=ExtResource("3_6qolk")]
 position = Vector2(307, 584)
-ease_rating = 5
 
 [node name="ScoreUI" type="RichTextLabel" parent="."]
 offset_left = 19.0
