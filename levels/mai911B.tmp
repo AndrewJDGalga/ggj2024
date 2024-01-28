@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://c2pyfkcc5qevs"]
+
+[ext_resource type="PackedScene" uid="uid://crmbqldvypv24" path="res://entities/curtis.tscn" id="1_bnq6j"]
+[ext_resource type="Script" path="res://levels/game_manager.gd" id="1_tj3jl"]
+[ext_resource type="AudioStream" uid="uid://crb2pcfx5w4ww" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Item Catch_/Cartoon/ESM_Vibrant_Game_Drop_Hover_up_1_Arcade_Cartoon_Quirky_Comedy_Comedic_Kid_Childish_Fun_Bouncy.wav" id="2_2t4t8"]
+[ext_resource type="AudioStream" uid="uid://8u2rua8bmgr8" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line drop_/Cartoon/ESM_Vibrant_Game_Water_Drop_Game_Touch_1_Arcade_Cartoon_Quirky_Comedy_Comedic_Kid_Childish_Fun_Bouncy.wav" id="2_w58uo"]
+[ext_resource type="PackedScene" uid="uid://c16o0epi7dc3" path="res://UI/tutorial_text.tscn" id="3_mhy6w"]
+[ext_resource type="PackedScene" uid="uid://bgouue1wlme4b" path="res://components/fishing_zone.tscn" id="4_7dt12"]
+[ext_resource type="AudioStream" uid="uid://dg2u3tf4h6vd6" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line drop_/Cartoon/UM_fx_one_shot_water_drop_cartoon_160.wav" id="4_y8kgo"]
+[ext_resource type="PackedScene" uid="uid://cjul85ld57hih" path="res://components/fishing_zone_lv_2.tscn" id="7_qx8l1"]
+[ext_resource type="PackedScene" uid="uid://drk8622ylr3vq" path="res://components/fishing_zone_lv_3.tscn" id="8_iupue"]
+[ext_resource type="PackedScene" uid="uid://cdmu8dmjkentv" path="res://components/fishing_zonelv_4.tscn" id="9_ib4ob"]
+
+[node name="mainlevel" type="Node2D" node_paths=PackedStringArray("ScoreText", "TimeText")]
+script = ExtResource("1_tj3jl")
+ScoreText = NodePath("ScoreUI")
+TimeText = NodePath("TimeOfDayText")
+success = ExtResource("2_2t4t8")
+fail = ExtResource("2_w58uo")
+cast = ExtResource("4_y8kgo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="TutorialText" parent="." instance=ExtResource("3_mhy6w")]
+offset_left = 1.0
+offset_top = 683.0
+offset_right = 201.0
+offset_bottom = 747.0
+
+[node name="fishing_zones" type="Node2D" parent="."]
+
+[node name="fishing_zone" parent="fishing_zones" instance=ExtResource("4_7dt12")]
+position = Vector2(126, 489)
+
+[node name="fishing_zone2" parent="fishing_zones" instance=ExtResource("4_7dt12")]
+position = Vector2(97, 132)
+
+[node name="fishing_zone3" parent="fishing_zones" instance=ExtResource("4_7dt12")]
+position = Vector2(267, 401)
+
+[node name="fishing_zoneLv2" parent="fishing_zones" instance=ExtResource("7_qx8l1")]
+position = Vector2(412, 138)
+
+[node name="fishing_zone_lv3" parent="fishing_zones" instance=ExtResource("8_iupue")]
+position = Vector2(195, 263)
+
+[node name="fishing_zonelv4" parent="fishing_zones" instance=ExtResource("9_ib4ob")]
+position = Vector2(446, 377)
+
+[node name="Curtis" parent="." node_paths=PackedStringArray("game_manager", "tut_text", "reward_ui_location") instance=ExtResource("1_bnq6j")]
+position = Vector2(300, 744)
+game_manager = NodePath("..")
+tut_text = NodePath("../TutorialText")
+reward_ui_location = NodePath("../RewardLocation")
+
+[node name="ScoreUI" type="RichTextLabel" parent="."]
+offset_left = 19.0
+offset_top = 15.0
+offset_right = 148.0
+offset_bottom = 65.0
+text = "Score: "
+
+[node name="TimeOfDayText" type="RichTextLabel" parent="."]
+offset_left = 460.0
+offset_top = 9.0
+offset_right = 589.0
+offset_bottom = 59.0
+text = "Time Of Day"
+
+[node name="RewardLocation" type="Node2D" parent="."]
+position = Vector2(281, 440)

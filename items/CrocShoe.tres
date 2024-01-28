@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_l5ara")
-item_name = "CrocShoe"
+item_name = "Croc"
 item_desc = "Dares dat udder one! Dag gum Croc slipped off muh foot some weeks ago!"
 item_texture = ExtResource("1_plp36")
-score = 1
-rarity = 1
+score = 2
+rarity = 2
