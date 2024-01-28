@@ -66,8 +66,8 @@ func _physics_process(delta):
 				cur_accuracy = set_attribute(
 					-line_degree_limit, line_degree_limit, cur_accuracy, 
 					accuracy_gain_rate, delta)
+				anim_player.play("toss_lure")
 			game_manager.PLAY_STATE.CASTING:
-				#TODO determine if needed?
 				pass
 				#lure.position.y = cur_throw_power
 				#lure.position.x = cur_accuracy
@@ -144,5 +144,6 @@ func _on_fishing_lure_successful_landing():
 
 
 func _on_fish_catch_meter_has_failed():
+	print("fail")
 	if game_manager.cur_state == game_manager.PLAY_STATE.CATCHING:
 		game_manager.cur_state = game_manager.PLAY_STATE.CATCH_FAIL

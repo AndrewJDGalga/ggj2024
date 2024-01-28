@@ -28,10 +28,7 @@ func auto_move_point(delta):
 	cur_point_pos = set_meter_point_percent(cur_point_pos + delta/auto_slide_slow * pull_dir)
 
 func fail_check():
-	print(meter.get_size().x)
-	print(cur_point_pos)
-	if cur_point_pos > 1.0 || \
-		cur_point_pos < 0.0:
+	if cur_point_pos > 1.0 || cur_point_pos < 0.0:
 		emit_signal("has_failed")
 
 func stop():

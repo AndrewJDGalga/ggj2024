@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b4fce6ai7yodo"
+path="res://.godot/imported/Get that fish out of water.wav-284eef6439e8cdeb41bb529cd86721aa.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/voicelines/Get that fish out of water.wav"
+dest_files=["res://.godot/imported/Get that fish out of water.wav-284eef6439e8cdeb41bb529cd86721aa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

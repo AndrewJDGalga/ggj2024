@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://debnllk2vk4ih"
+path="res://.godot/imported/He He.wav-bd3d6b369c09acb4414dfae96b5b8e43.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/voicelines/He He.wav"
+dest_files=["res://.godot/imported/He He.wav-bd3d6b369c09acb4414dfae96b5b8e43.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

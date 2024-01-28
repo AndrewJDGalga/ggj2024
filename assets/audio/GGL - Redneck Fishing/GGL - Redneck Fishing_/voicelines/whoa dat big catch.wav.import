@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bxek8ii5715s"
+path="res://.godot/imported/whoa dat big catch.wav-36f1114a27201eb09e175514623e0817.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/voicelines/whoa dat big catch.wav"
+dest_files=["res://.godot/imported/whoa dat big catch.wav-36f1114a27201eb09e175514623e0817.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://doghxvnlu4iqf"
+path="res://.godot/imported/Feelin that moonshine.wav-0ccc9c6b8b3154b788cf40d2cefcd50b.sample"
+
+[deps]
+
+source_file="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/voicelines/Feelin that moonshine.wav"
+dest_files=["res://.godot/imported/Feelin that moonshine.wav-0ccc9c6b8b3154b788cf40d2cefcd50b.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
