@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ctc6k3cd3byl0"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://ci7cb5hibxuh2"]
 
 [ext_resource type="Script" path="res://items/ItemData.gd" id="1_acllm"]
 [ext_resource type="Texture2D" uid="uid://ks2fkev1pjom" path="res://assets/art/Jesus Fish.png" id="1_kjpwj"]

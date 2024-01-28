@@ -27,7 +27,7 @@ var score:int
 
 @export_group("Audio")
 @onready var audiostream = $AudioStreamPlayer
-@export var background_music1:AudioStream
+@export var background_music1:AudioStream 
 @export var background_music2:AudioStream
 @export var ambientTrack:AudioStream
 @export var success:AudioStream

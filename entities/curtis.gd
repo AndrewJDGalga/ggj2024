@@ -67,7 +67,8 @@ func _physics_process(delta):
 					accuracy_gain_rate, delta)
 				anim_player.play("toss_lure")
 			game_manager.PLAY_STATE.CASTING:
-				game_manager.cur_state = game_manager.PLAY_STATE.CATCH_SUCCEED
+				if lure.is_in_zone():
+					game_manager.cur_state = game_manager.PLAY_STATE.CATCH_SUCCEED
 				#lure.position.y = cur_throw_power
 				#lure.position.x = cur_accuracy
 			game_manager.PLAY_STATE.CATCH_FAIL:
