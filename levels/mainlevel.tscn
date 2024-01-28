@@ -24,8 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://cqqjao5hwaxgy" path="res://UI/reward_ui.tscn" id="11_8b3e7"]
 [ext_resource type="Resource" uid="uid://cyg8fjt7rbtts" path="res://items/PBR.tres" id="11_gff6f"]
 [ext_resource type="PackedScene" uid="uid://vxm4pou8n1l8" path="res://UI/score_summary.tscn" id="11_mu4n3"]
-[ext_resource type="Resource" uid="uid://buf6rp0dhudy1" path="res://items/RetroCassette.tres" id="12_3d2bq"]
-[ext_resource type="Resource" uid="uid://b01kj0i0r4vrc" path="res://items/Smokes.tres" id="14_fqy66"]
+[ext_resource type="Resource" uid="uid://crgbgb4c18yjj" path="res://items/RetroCassette.tres" id="12_3d2bq"]
+[ext_resource type="Resource" uid="uid://b18tte1fb6whk" path="res://items/Smokes.tres" id="14_fqy66"]
 [ext_resource type="PackedScene" uid="uid://b1wycb388itey" path="res://UI/time_background.tscn" id="23_8jsgw"]
 
 [node name="mainlevel" type="Node2D" node_paths=PackedStringArray("ScoreText", "TimeText", "EndGameScene", "reward_instance")]
