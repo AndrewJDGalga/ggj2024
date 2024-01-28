@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bggxmxlgfg7qh"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://2qdgwm5xoya2"]
 
 [ext_resource type="Script" path="res://items/ItemData.gd" id="1_l5ara"]
 [ext_resource type="Texture2D" uid="uid://wc2dwoj0535w" path="res://assets/art/Croc.png" id="1_plp36"]

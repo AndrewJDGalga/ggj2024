@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bgcng1f1w3eyh"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://b1j3yfji02jma"]
 
 [ext_resource type="Texture2D" uid="uid://0e6itwwkh1md" path="res://assets/art/Old Boot.png" id="1_mpk3o"]
 [ext_resource type="Script" path="res://items/ItemData.gd" id="1_xhq2e"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cyg8fjt7rbtts"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://l8v0abfjogvi"]
 
 [ext_resource type="Script" path="res://items/ItemData.gd" id="1_nwxhg"]
 [ext_resource type="Texture2D" uid="uid://k21t3f5vypo6" path="res://assets/art/PBR.png" id="1_x8jtw"]

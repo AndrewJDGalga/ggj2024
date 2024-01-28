@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://buf6rp0dhudy1"]
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://crgbgb4c18yjj"]
 
 [ext_resource type="Texture2D" uid="uid://d365ql68cbvu6" path="res://assets/art/Retro cassette.png" id="1_53vkj"]
 [ext_resource type="Script" path="res://items/ItemData.gd" id="1_506b7"]

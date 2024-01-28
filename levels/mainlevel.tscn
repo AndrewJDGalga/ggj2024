@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://c2pyfkcc5qevs"]
+[gd_scene load_steps=24 format=3 uid="uid://c2pyfkcc5qevs"]
 
 [ext_resource type="PackedScene" uid="uid://crmbqldvypv24" path="res://entities/curtis.tscn" id="1_bnq6j"]
 [ext_resource type="Script" path="res://levels/game_manager.gd" id="1_tj3jl"]
@@ -8,20 +8,21 @@
 [ext_resource type="PackedScene" uid="uid://bgouue1wlme4b" path="res://components/fishing_zone.tscn" id="4_7dt12"]
 [ext_resource type="AudioStream" uid="uid://dg2u3tf4h6vd6" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line drop_/Cartoon/UM_fx_one_shot_water_drop_cartoon_160.wav" id="4_y8kgo"]
 [ext_resource type="Resource" uid="uid://dhke5qpi5pd0n" path="res://items/Salmon.tres" id="5_l7l2m"]
-[ext_resource type="Resource" uid="uid://rfwppf14rl0w" path="res://items/CatFish.tres" id="5_q5lcc"]
-[ext_resource type="Resource" uid="uid://bggxmxlgfg7qh" path="res://items/CrocShoe.tres" id="6_y2vfa"]
+[ext_resource type="Resource" path="res://items/CatFish.tres" id="5_q5lcc"]
+[ext_resource type="Resource" path="res://items/CrocShoe.tres" id="6_y2vfa"]
 [ext_resource type="PackedScene" uid="uid://cjul85ld57hih" path="res://components/fishing_zone_lv_2.tscn" id="7_qx8l1"]
-[ext_resource type="Resource" uid="uid://de2vijotixh4k" path="res://items/GoldTooth.tres" id="7_qy2ml"]
+[ext_resource type="Resource" path="res://items/GoldTooth.tres" id="7_qy2ml"]
 [ext_resource type="PackedScene" uid="uid://drk8622ylr3vq" path="res://components/fishing_zone_lv_3.tscn" id="8_iupue"]
-[ext_resource type="Resource" uid="uid://ctc6k3cd3byl0" path="res://items/JesusFish.tres" id="8_ugcjr"]
-[ext_resource type="Resource" uid="uid://d3gpnnlrfa8mh" path="res://items/Moonshine.tres" id="9_acgq3"]
+[ext_resource type="Resource" path="res://items/JesusFish.tres" id="8_ugcjr"]
+[ext_resource type="Resource" path="res://items/Moonshine.tres" id="9_acgq3"]
 [ext_resource type="PackedScene" uid="uid://cdmu8dmjkentv" path="res://components/fishing_zonelv_4.tscn" id="9_ib4ob"]
-[ext_resource type="Resource" uid="uid://bgcng1f1w3eyh" path="res://items/OldBoot.tres" id="10_s1mgc"]
+[ext_resource type="Resource" path="res://items/OldBoot.tres" id="10_s1mgc"]
+[ext_resource type="AudioStream" uid="uid://c4huleaavregg" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Music/Gameplay Music/GGL_-_Redneck_Fishing_3.wav" id="10_upslj"]
 [ext_resource type="PackedScene" uid="uid://cqqjao5hwaxgy" path="res://UI/reward_ui.tscn" id="11_8b3e7"]
-[ext_resource type="Resource" uid="uid://cyg8fjt7rbtts" path="res://items/PBR.tres" id="11_gff6f"]
+[ext_resource type="Resource" path="res://items/PBR.tres" id="11_gff6f"]
 [ext_resource type="PackedScene" uid="uid://vxm4pou8n1l8" path="res://UI/score_summary.tscn" id="11_mu4n3"]
-[ext_resource type="Resource" uid="uid://buf6rp0dhudy1" path="res://items/RetroCassette.tres" id="12_3d2bq"]
-[ext_resource type="Resource" uid="uid://b01kj0i0r4vrc" path="res://items/Smokes.tres" id="14_fqy66"]
+[ext_resource type="Resource" path="res://items/RetroCassette.tres" id="12_3d2bq"]
+[ext_resource type="Resource" path="res://items/Smokes.tres" id="14_fqy66"]
 
 [node name="mainlevel" type="Node2D" node_paths=PackedStringArray("ScoreText", "TimeText", "EndGameScene", "reward_instance")]
 script = ExtResource("1_tj3jl")
@@ -34,7 +35,9 @@ cast = ExtResource("4_y8kgo")
 Items = Array[Resource("res://items/ItemData.gd")]([ExtResource("5_q5lcc"), ExtResource("6_y2vfa"), ExtResource("7_qy2ml"), ExtResource("8_ugcjr"), ExtResource("9_acgq3"), ExtResource("10_s1mgc"), ExtResource("11_gff6f"), ExtResource("12_3d2bq"), ExtResource("5_l7l2m"), ExtResource("14_fqy66")])
 reward_instance = NodePath("RewardUI")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="AudioStreamMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_upslj")
+autoplay = true
 
 [node name="TutorialText" parent="." instance=ExtResource("3_mhy6w")]
 offset_left = 1.0
@@ -104,3 +107,5 @@ offset_left = 61.0
 offset_top = 194.0
 offset_right = 61.0
 offset_bottom = 194.0
+
+[node name="AudioStreamSFX" type="AudioStreamPlayer" parent="."]
