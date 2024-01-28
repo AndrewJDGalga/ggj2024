@@ -8,5 +8,5 @@ script = ExtResource("1_gv6nf")
 item_name = "Catfish"
 item_desc = "OOOHH WEEE, Now she sure don't look like her profile picher but she'll cook up real nice."
 item_texture = ExtResource("1_fo2wo")
-score = 3
-rarity = 3
+score = 5
+rarity = 5

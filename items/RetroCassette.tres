@@ -8,5 +8,5 @@ script = ExtResource("1_506b7")
 item_name = "Retro Cassette"
 item_desc = "Oh ho! A Trailer Swift classic!"
 item_texture = ExtResource("1_53vkj")
-score = 2
-rarity = 2
+score = 3
+rarity = 3

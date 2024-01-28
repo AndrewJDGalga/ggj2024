@@ -1,0 +1,41 @@
+[gd_scene load_steps=10 format=3 uid="uid://pqeyjyyld5oc"]
+
+[ext_resource type="Texture2D" uid="uid://blrkv2kf5i87u" path="res://assets/art/Beach Can.png" id="1_4efcu"]
+[ext_resource type="Texture2D" uid="uid://pprvqw733y2l" path="res://assets/art/Beach shore 2.png" id="2_12c68"]
+[ext_resource type="Texture2D" uid="uid://ck6ixnh3ffu85" path="res://assets/art/Sand.png" id="3_6pqto"]
+[ext_resource type="Texture2D" uid="uid://d3flw2pm751xa" path="res://assets/art/shore_with_shell.png" id="4_oc8mf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bohcq"]
+resource_name = "beachcan"
+texture = ExtResource("1_4efcu")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iwynu"]
+resource_name = "Waterside"
+texture = ExtResource("2_12c68")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m220l"]
+resource_name = "Sand"
+texture = ExtResource("3_6pqto")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_inuu6"]
+resource_name = "shell"
+texture = ExtResource("4_oc8mf")
+texture_region_size = Vector2i(512, 512)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_kjlx2"]
+tile_size = Vector2i(24, 24)
+sources/0 = SubResource("TileSetAtlasSource_bohcq")
+sources/1 = SubResource("TileSetAtlasSource_iwynu")
+sources/2 = SubResource("TileSetAtlasSource_m220l")
+sources/3 = SubResource("TileSetAtlasSource_inuu6")
+
+[node name="Beachtiles" type="TileMap"]
+tile_set = SubResource("TileSet_kjlx2")
+format = 2
