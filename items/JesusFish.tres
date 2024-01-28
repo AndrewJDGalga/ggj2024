@@ -8,5 +8,5 @@ script = ExtResource("1_acllm")
 item_name = "Jesus Fish Token"
 item_desc = "OH YEAH! An Arkie-A-logical find!"
 item_texture = ExtResource("1_kjpwj")
-score = 2
-rarity = 2
+score = 4
+rarity = 4

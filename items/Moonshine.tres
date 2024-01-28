@@ -8,5 +8,5 @@ script = ExtResource("1_05hyy")
 item_name = "Moonshine"
 item_desc = "A fine vintage, aged in stream 'round a fort night."
 item_texture = ExtResource("1_kfd6k")
-score = 2
-rarity = 2
+score = 4
+rarity = 4

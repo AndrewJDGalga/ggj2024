@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://co6ow5svk1xpe"]
+
+[ext_resource type="Texture2D" uid="uid://b2nnwnma1q7d8" path="res://assets/art/Trucker Hat.png" id="1_kbta2"]
+[ext_resource type="Script" path="res://items/ItemData.gd" id="1_pme5r"]
+
+[resource]
+script = ExtResource("1_pme5r")
+item_name = "TruckerHAt"
+item_desc = "And they say Birthday shoppin's hard."
+item_texture = ExtResource("1_kbta2")
+score = 2
+rarity = 2
