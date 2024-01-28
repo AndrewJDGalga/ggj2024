@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://rfwppf14rl0w"]
+
+[ext_resource type="Texture2D" uid="uid://bahn3nhmn1fcp" path="res://assets/art/Cat fish.png" id="1_fo2wo"]
+[ext_resource type="Script" path="res://items/ItemData.gd" id="1_gv6nf"]
+
+[resource]
+script = ExtResource("1_gv6nf")
+item_name = "Catfish"
+item_desc = "OOOHH WEEE, Now she sure don't look like her profile picher but she'll cook up real nice."
+item_texture = ExtResource("1_fo2wo")
+score = 3
+rarity = 3

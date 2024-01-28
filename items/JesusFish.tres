@@ -9,4 +9,4 @@ item_name = "Jesus Fish Token"
 item_desc = "OH YEAH! An Arkie-A-logical find!"
 item_texture = ExtResource("1_kjpwj")
 score = 2
-rarity = 0
+rarity = 2
