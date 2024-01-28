@@ -11,14 +11,25 @@ var time_am = true
 @export var day_length = 30
 @export var hour_start = 12
 @export var hour_end = 18
-
-signal update_score(new_value)
-
 enum PLAY_STATE {TEST, START, LINE_UP, POWER, ACCURACY, CASTING, CATCHING, CATCH_FAIL,
 	CAST_SUCCEED, CATCH_SUCCEED }
 var cur_state : PLAY_STATE = PLAY_STATE.START
 @export var lure_y_limit := -650
 var score:int
+
+@export_group("Audio")
+@onready var audiostream = $AudioStreamPlayer
+@export_file var background_music1
+@export_file var background_music2
+@export_file var ambientTrack
+@export_file var success
+@export_file var fail
+@export_file var cast
+@export_file var fart1
+@export_file var fart2
+@export_file var fart3
+
+signal update_score(new_value)
 
 func set_score(new_score:int):
 	score = new_score

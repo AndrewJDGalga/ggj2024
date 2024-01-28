@@ -7,6 +7,15 @@
 
 [node name="mainlevel" type="Node2D"]
 script = ExtResource("1_tj3jl")
+background_music1 = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Music/Gameplay Music/Dumb_banjo_misc_jamDumb_Banjo_Song_shortened.wav"
+background_music2 = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Music/Gameplay Music/GGL_-_Redneck_Fishing_3.wav"
+ambientTrack = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Swamp Ambience/Nature_Forrest_Swamp_sounds.mp3"
+success = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Item Catch_/Special Catch/MagicalTwinkle_S08CT.107.wav"
+fail = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Item Drop/ESM_Puzzle_Game_Drop_Bubble_05_Cartoon_App_Mobile_FX_Hit_Tap.wav"
+cast = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line Cast_/Organic/ESM_FG_FX_one_shot_fishing_pole_cast_line_4_throw_fishing_pole_rod_movement_ready.wav"
+fart1 = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Comedy/Fart_BW.16090.wav"
+fart2 = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Comedy/wet_fart_sample.wav"
+fart3 = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Comedy/FartHardLongFunny_SFXB.2036.wav"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
@@ -21,21 +30,23 @@ offset_top = 683.0
 offset_right = 201.0
 offset_bottom = 747.0
 
-[node name="fishing_zone" parent="." instance=ExtResource("4_7dt12")]
+[node name="fishing_zones" type="Node2D" parent="."]
+
+[node name="fishing_zone" parent="fishing_zones" instance=ExtResource("4_7dt12")]
 position = Vector2(255, 193)
 
-[node name="fishing_zone2" parent="." instance=ExtResource("4_7dt12")]
+[node name="fishing_zone2" parent="fishing_zones" instance=ExtResource("4_7dt12")]
 position = Vector2(113, 338)
 ease_rating = 3
 
-[node name="fishing_zone3" parent="." instance=ExtResource("4_7dt12")]
+[node name="fishing_zone3" parent="fishing_zones" instance=ExtResource("4_7dt12")]
 position = Vector2(405, 205)
 ease_rating = 5
 
-[node name="fishing_zone4" parent="." instance=ExtResource("4_7dt12")]
+[node name="fishing_zone4" parent="fishing_zones" instance=ExtResource("4_7dt12")]
 position = Vector2(453, 440)
 ease_rating = 4
 
-[node name="fishing_zone5" parent="." instance=ExtResource("4_7dt12")]
+[node name="fishing_zone5" parent="fishing_zones" instance=ExtResource("4_7dt12")]
 position = Vector2(160, 519)
 ease_rating = 2
