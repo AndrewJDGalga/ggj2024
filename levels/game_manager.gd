@@ -4,6 +4,7 @@ class_name Game_Manager
 
 @onready var TimePlayer = $TimeBackground/AnimationPlayer
 @onready var time_of_day = $TimeOfDayText
+@onready var audio = $AudioStreamPlayer
 var timer = Timer.new()
 var time_hour:int = 0
 var time_minutes:int = 0
@@ -19,15 +20,15 @@ var score:int
 
 @export_group("Audio")
 @onready var audiostream = $AudioStreamPlayer
-@export_file var background_music1
-@export_file var background_music2
-@export_file var ambientTrack
-@export_file var success
-@export_file var fail
-@export_file var cast
-@export_file var fart1
-@export_file var fart2
-@export_file var fart3
+@export var background_music1:AudioStream
+@export var background_music2:AudioStream
+@export var ambientTrack:AudioStream
+@export var success:AudioStream
+@export var fail:AudioStream
+@export var cast:AudioStream
+@export var fart1:AudioStream
+@export var fart2:AudioStream
+@export var fart3:AudioStream
 
 signal update_score(new_value)
 
@@ -73,5 +74,8 @@ func update_time_ui():
 	if (time_hour < 12):
 		time_hour_formatted += 1
 	time_of_day.set_text(str(time_hour_formatted) + ":" + str(time_minutes).pad_zeros(2) + TimeEnd)
-	
-	
+
+func play_fail():
+	audio.stop()
+	audio.set_stream(fail)
+	audio.play()

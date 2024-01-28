@@ -1,21 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2pyfkcc5qevs"]
+[gd_scene load_steps=8 format=3 uid="uid://c2pyfkcc5qevs"]
 
 [ext_resource type="PackedScene" uid="uid://crmbqldvypv24" path="res://entities/curtis.tscn" id="1_bnq6j"]
 [ext_resource type="Script" path="res://levels/game_manager.gd" id="1_tj3jl"]
+[ext_resource type="AudioStream" uid="uid://crb2pcfx5w4ww" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Item Catch_/Cartoon/ESM_Vibrant_Game_Drop_Hover_up_1_Arcade_Cartoon_Quirky_Comedy_Comedic_Kid_Childish_Fun_Bouncy.wav" id="2_2t4t8"]
+[ext_resource type="AudioStream" uid="uid://8u2rua8bmgr8" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line drop_/Cartoon/ESM_Vibrant_Game_Water_Drop_Game_Touch_1_Arcade_Cartoon_Quirky_Comedy_Comedic_Kid_Childish_Fun_Bouncy.wav" id="2_w58uo"]
 [ext_resource type="PackedScene" uid="uid://c16o0epi7dc3" path="res://UI/tutorial_text.tscn" id="3_mhy6w"]
 [ext_resource type="PackedScene" uid="uid://bgouue1wlme4b" path="res://components/fishing_zone.tscn" id="4_7dt12"]
+[ext_resource type="AudioStream" uid="uid://dg2u3tf4h6vd6" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line drop_/Cartoon/UM_fx_one_shot_water_drop_cartoon_160.wav" id="4_y8kgo"]
 
 [node name="mainlevel" type="Node2D"]
 script = ExtResource("1_tj3jl")
-background_music1 = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Music/Gameplay Music/Dumb_banjo_misc_jamDumb_Banjo_Song_shortened.wav"
-background_music2 = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Music/Gameplay Music/GGL_-_Redneck_Fishing_3.wav"
-ambientTrack = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Swamp Ambience/Nature_Forrest_Swamp_sounds.mp3"
-success = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Item Catch_/Special Catch/MagicalTwinkle_S08CT.107.wav"
-fail = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Item Drop/ESM_Puzzle_Game_Drop_Bubble_05_Cartoon_App_Mobile_FX_Hit_Tap.wav"
-cast = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Fishing Pole/Line Cast_/Organic/ESM_FG_FX_one_shot_fishing_pole_cast_line_4_throw_fishing_pole_rod_movement_ready.wav"
-fart1 = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Comedy/Fart_BW.16090.wav"
-fart2 = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Comedy/wet_fart_sample.wav"
-fart3 = "res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Samples/Comedy/FartHardLongFunny_SFXB.2036.wav"
+success = ExtResource("2_2t4t8")
+fail = ExtResource("2_w58uo")
+cast = ExtResource("4_y8kgo")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

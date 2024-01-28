@@ -72,7 +72,7 @@ func _physics_process(delta):
 				#lure.position.y = cur_throw_power
 				#lure.position.x = cur_accuracy
 			game_manager.PLAY_STATE.CATCH_FAIL:
-				#TODO fail notice
+				game_manager.play_fail()
 				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
 			game_manager.PLAY_STATE.CAST_SUCCEED:
 				#TODO success notice
