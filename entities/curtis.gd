@@ -49,9 +49,11 @@ func _physics_process(delta):
 				print("cast success!")
 				game_manager.cur_state = game_manager.PLAY_STATE.CATCHING
 			game_manager.PLAY_STATE.CATCHING:
-				pass
+				if Input.is_action_pressed("action1"):
+					catch_meter.push_point(1, 2.0, delta)
+				if Input.is_action_pressed("action2"):
+					catch_meter.push_point(-1, 2.0, delta)
 			game_manager.PLAY_STATE.CATCH_SUCCEED:
-				#print("Caught!")
 				var item_data = load("res://items/Salmon.tres")
 				var item_instance = item_data.duplicate()
 				item_instance.item_weight = rng.randi_range(0,100)
@@ -68,9 +70,16 @@ func _physics_process(delta):
 					reward_instance.scroll_up()
 				if (Input.is_action_pressed("action2")):
 					reward_instance.scroll_down()
+			game_manager.PLAY_STATE.CATCH_FAIL:
+				pass
 			game_manager.PLAY_STATE.TEST:
+				#pass
+				if Input.is_action_just_pressed("ui_accept"):
+					catch_meter.start(0.3, 0.2)
 				if Input.is_action_pressed("action1"):
-					catch_meter.start(1, 0.2)
+					catch_meter.push_point(1, 2.0, delta)
+				if Input.is_action_pressed("action2"):
+					catch_meter.push_point(-1, 2.0, delta)
 				#cur_throw_power = -50
 				#anim_player.play("toss_lure")
 				#game_manager.cur_state = game_manager.PLAY_STATE.CASTING
@@ -111,3 +120,8 @@ func close_reward():
 func _on_fishing_lure_successful_landing():
 	if game_manager.cur_state == game_manager.PLAY_STATE.CASTING:
 		game_manager.cur_state = game_manager.PLAY_STATE.CAST_SUCCEED
+
+
+func _on_fish_catch_meter_has_failed():
+	if game_manager.cur_state == game_manager.PLAY_STATE.CATCHING:
+		game_manager.cur_state = game_manager.PLAY_STATE.CATCH_FAIL
