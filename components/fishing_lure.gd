@@ -9,5 +9,5 @@ func get_zone_difficulty()->int:
 	zone_difficulty = 0
 	return temp
 
-func _on_area_entered(area):
+func _on_area_entered(_area):
 	emit_signal("successful_landing")

@@ -1,0 +1,13 @@
+[gd_resource type="AnimatedTexture" load_steps=2 format=3 uid="uid://ck7ocn1l5sxtt"]
+
+[ext_resource type="Texture2D" uid="uid://cpfg8glrodt2m" path="res://assets/art/ExportedLayers.png" id="1_jeo8i"]
+
+[resource]
+frames = 7
+frame_0/texture = ExtResource("1_jeo8i")
+frame_1/duration = 1.0
+frame_2/duration = 1.0
+frame_3/duration = 1.0
+frame_4/duration = 1.0
+frame_5/duration = 1.0
+frame_6/duration = 1.0
