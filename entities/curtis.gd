@@ -3,8 +3,8 @@ extends Area2D
 @onready var lure = $fishing_lure
 @onready var anim_player = $AnimationPlayer
 @onready var catch_meter = $FishCatchMeter
-@onready var golf_meter_h = $GolfMeterH
-@onready var golf_meter_v = $GolfMeterV
+@onready var accuracy_meter = $GolfMeterH
+@onready var pow_meter = $GolfMeterV
 @export var game_manager:Game_Manager
 @export var turn_speed := 2.0
 ##rotation limit for player's line + accuracy mod
@@ -21,26 +21,36 @@ var rng = RandomNumberGenerator.new()
 
 func _ready():
 	catch_meter.set_meter_text("Balance the line!")
-	
 	catch_meter.visible = false
-	golf_meter_h.visible = false
-	golf_meter_v.visible = false
+	accuracy_meter.visible = false
+	pow_meter.visible = false
 
 func _physics_process(delta):
 	if game_manager:
 		match game_manager.cur_state:
+			game_manager.PLAY_STATE.START:
+				#can't assign labels at _ready successfully
+				accuracy_meter.set_label("Accuracy")
+				pow_meter.set_label("Power")
+				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
 			game_manager.PLAY_STATE.LINE_UP:
 				if Input.is_action_just_pressed("action1") && Input.is_action_just_pressed("action2"):
 					game_manager.cur_state = game_manager.PLAY_STATE.CASTING
 				turn_for_casting(delta)
 			game_manager.PLAY_STATE.POWER:
+				accuracy_meter.visible = false
+				pow_meter.visible = true
+				pow_meter.start()
 				if Input.is_action_pressed("action1"):
 					game_manager.cur_state = game_manager.PLAY_STATE.ACCURACY
 				cur_throw_power = set_attribute(
 					game_manager.lure_y_limit, 0, cur_throw_power, 
 					pow_gain_rate, delta)
 			game_manager.PLAY_STATE.ACCURACY:
+				accuracy_meter.visible = false
+				pow_meter.visible = true
 				if Input.is_action_pressed("action1"):
+					pow_meter.visible = false
 					game_manager.cur_state = game_manager.PLAY_STATE.CASTING
 				cur_accuracy = set_attribute(
 					-line_degree_limit, line_degree_limit, cur_accuracy, 
@@ -49,7 +59,7 @@ func _physics_process(delta):
 				lure.position.y = cur_throw_power
 				lure.position.x = cur_accuracy
 			game_manager.PLAY_STATE.CATCH_FAIL:
-				print("Fail!")
+				#TODO fail notice
 				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
 			game_manager.PLAY_STATE.CAST_SUCCEED:
 				print("cast success!")
@@ -64,46 +74,32 @@ func _physics_process(delta):
 				var item_data = load("res://items/Salmon.tres")
 				var item_instance = item_data.duplicate()
 				item_instance.item_weight = rng.randi_range(0,100)
-				
 				display_reward(item_instance)
-				
 				# close window / continue
 				if (Input.is_action_pressed("action1") && Input.is_action_pressed("action2")):
 					close_reward()
 					game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
-					
 				# scrolling functionality
 				if (Input.is_action_pressed("action1")):
 					reward_instance.scroll_up()
 				if (Input.is_action_pressed("action2")):
 					reward_instance.scroll_down()
 			game_manager.PLAY_STATE.CATCH_FAIL:
-				print("catch fail")
+				#TODO fail notice
 				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
 			game_manager.PLAY_STATE.TEST:
-				#lure.position.y = -200
-				golf_meter_h.visible = true
-				golf_meter_v.visible = true
+				pow_meter.visible = true
 				
 				if Input.is_action_just_pressed("ui_accept"):
-					golf_meter_h.set_label("Accuracy")
-					golf_meter_v.set_label("Power")
-					golf_meter_v.start()
+					accuracy_meter.set_label("Accuracy")
+					pow_meter.set_label("Power")
+					pow_meter.start()
 				
 				if Input.is_action_just_pressed("action1"):
-					print(golf_meter_v.get_percent())
-					golf_meter_v.stop()
-					
-				
-				#if Input.is_action_just_pressed("ui_accept"):
-					#catch_meter.start(0.3, 0.2)
-				#if Input.is_action_pressed("action1"):
-					#catch_meter.push_point(1, 2.0, delta)
-				#if Input.is_action_pressed("action2"):
-					#catch_meter.push_point(-1, 2.0, delta)
-				#cur_throw_power = -50
-				#anim_player.play("toss_lure")
-				#game_manager.cur_state = game_manager.PLAY_STATE.CASTING
+					var new_pos = game_manager.lure_y_limit * pow_meter.get_percent()
+					print(new_pos)
+					lure.position.y = new_pos
+					pow_meter.stop()
 
 func set_attribute(min_limit, max_limit, attribute, gain, delta)->float:
 	if gain_attribute:

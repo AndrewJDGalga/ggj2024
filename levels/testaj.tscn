@@ -65,6 +65,7 @@ offset_bottom = 65.0
 text = "Score: "
 
 [node name="TimeOfDayText" type="RichTextLabel" parent="."]
+visible = false
 offset_left = 460.0
 offset_top = 9.0
 offset_right = 589.0
@@ -72,6 +73,7 @@ offset_bottom = 59.0
 text = "Time Of Day"
 
 [node name="TimeBackground" type="TextureRect" parent="."]
+visible = false
 offset_left = 98.0
 offset_top = 82.0
 offset_right = 521.0
