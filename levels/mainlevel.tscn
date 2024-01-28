@@ -50,9 +50,6 @@ offset_bottom = 471.0
 rotation = 3.14159
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-[node name="Beachtiles" parent="." instance=ExtResource("6_oob1l")]
-position = Vector2(0, 764)
-layer_0/tile_data = PackedInt32Array(196611, 2, 0, 196621, 2, 0, 196631, 2, 0)
 
 [node name="AudioStreamMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_upslj")
