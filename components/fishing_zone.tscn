@@ -1,9 +1,87 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgouue1wlme4b"]
+[gd_scene load_steps=14 format=3 uid="uid://bgouue1wlme4b"]
 
 [ext_resource type="Script" path="res://components/fishing_zone.gd" id="1_ituyp"]
+[ext_resource type="Texture2D" uid="uid://cpfg8glrodt2m" path="res://assets/art/ExportedLayers.png" id="2_1jjos"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rcrbo"]
 radius = 32.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55vum"]
+atlas = ExtResource("2_1jjos")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjsqx"]
+atlas = ExtResource("2_1jjos")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gm7p1"]
+atlas = ExtResource("2_1jjos")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i0tu1"]
+atlas = ExtResource("2_1jjos")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7700"]
+atlas = ExtResource("2_1jjos")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50552"]
+atlas = ExtResource("2_1jjos")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w65nr"]
+atlas = ExtResource("2_1jjos")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7h33t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55vum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjsqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gm7p1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i0tu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7700")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50552")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w65nr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_olci0"]
+resource_name = "FadeRipple"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSpriteZone:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mga6x"]
+_data = {
+"FadeRipple": SubResource("Animation_olci0")
+}
 
 [node name="fishing_zone" type="Area2D"]
 collision_layer = 2
@@ -13,9 +91,19 @@ script = ExtResource("1_ituyp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rcrbo")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -12.0
-offset_top = -12.0
-offset_right = 12.0
-offset_bottom = 12.0
-color = Color(0, 1, 0, 1)
+[node name="AnimatedSpriteZone" type="AnimatedSprite2D" parent="."]
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_7h33t")
+
+[node name="ZoneCooldown" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_mga6x")
+}
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="timeout" from="ZoneCooldown" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

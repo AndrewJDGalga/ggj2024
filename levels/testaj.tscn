@@ -52,6 +52,9 @@ color = Color(0.631373, 0.243137, 0, 1)
 position = Vector2(309, 713)
 game_manager = NodePath("..")
 
+[node name="fishing_lure" parent="Curtis" index="2"]
+position = Vector2(-10, -151)
+
 [node name="fishing_zone" parent="." instance=ExtResource("3_6qolk")]
 position = Vector2(307, 584)
 ease_rating = 5
@@ -71,17 +74,10 @@ offset_bottom = 59.0
 text = "Time Of Day"
 
 [node name="TimeBackground" type="TextureRect" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
 offset_left = 98.0
 offset_top = 82.0
 offset_right = 521.0
 offset_bottom = 488.0
-grow_horizontal = 2
-grow_vertical = 2
 pivot_offset = Vector2(221, 203)
 texture = ExtResource("4_jgtcq")
 stretch_mode = 4
@@ -90,3 +86,5 @@ stretch_mode = 4
 libraries = {
 "": SubResource("AnimationLibrary_jqub8")
 }
+
+[editable path="Curtis"]

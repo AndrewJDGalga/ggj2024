@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b6eadiimgwj4m" path="res://components/fishing_lure.tscn" id="2_gos2j"]
 [ext_resource type="PackedScene" uid="uid://cqqjao5hwaxgy" path="res://UI/reward_ui.tscn" id="2_m1w8c"]
 [ext_resource type="PackedScene" uid="uid://en2xq5wxjh10" path="res://UI/balance_meter.tscn" id="3_kl8f3"]
-[ext_resource type="PackedScene" uid="uid://12ecr48on814" path="res://UI/GolfMeter/golf_meter_h.tscn" id="5_vqemi"]
-[ext_resource type="PackedScene" uid="uid://b3p6yc14m14xh" path="res://UI/GolfMeter/golf_meter_v.tscn" id="6_6jjox"]
+[ext_resource type="PackedScene" uid="uid://12ecr48on814" path="res://UI/GolfMeter/golf_meter_h.tscn" id="5_ly0wr"]
+[ext_resource type="PackedScene" uid="uid://b3p6yc14m14xh" path="res://UI/GolfMeter/golf_meter_v.tscn" id="6_7ga4n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7g544"]
 radius = 24.0
@@ -33,7 +33,7 @@ offset_right = 24.0
 offset_bottom = 24.0
 
 [node name="fishing_lure" parent="." instance=ExtResource("2_gos2j")]
-position = Vector2(0, -36)
+position = Vector2(0, -200)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -47,9 +47,9 @@ offset_right = 359.0
 offset_bottom = 154.0
 scale = Vector2(0.5, 0.5)
 
-[node name="GolfMeterH" parent="." instance=ExtResource("5_vqemi")]
+[node name="GolfMeterH" parent="." instance=ExtResource("5_ly0wr")]
 
-[node name="GolfMeterV" parent="." instance=ExtResource("6_6jjox")]
+[node name="GolfMeterV" parent="." instance=ExtResource("6_7ga4n")]
 
 [connection signal="successful_landing" from="fishing_lure" to="." method="_on_fishing_lure_successful_landing"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
