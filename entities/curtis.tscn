@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://crmbqldvypv24"]
+[gd_scene load_steps=11 format=3 uid="uid://crmbqldvypv24"]
 
 [ext_resource type="Script" path="res://entities/curtis.gd" id="1_7lmy5"]
 [ext_resource type="PackedScene" uid="uid://b6eadiimgwj4m" path="res://components/fishing_lure.tscn" id="2_gos2j"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://en2xq5wxjh10" path="res://UI/balance_meter.tscn" id="3_kl8f3"]
 [ext_resource type="PackedScene" uid="uid://12ecr48on814" path="res://UI/GolfMeter/golf_meter_h.tscn" id="5_ly0wr"]
 [ext_resource type="PackedScene" uid="uid://b3p6yc14m14xh" path="res://UI/GolfMeter/golf_meter_v.tscn" id="6_7ga4n"]
+[ext_resource type="Texture2D" uid="uid://bigsaghikrr34" path="res://assets/art/Curtis.png" id="7_1tjwj"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7g544"]
 radius = 24.0
@@ -27,6 +28,7 @@ reward_ui = ExtResource("2_m1w8c")
 shape = SubResource("CircleShape2D_7g544")
 
 [node name="testbody" type="ColorRect" parent="."]
+visible = false
 offset_left = -24.0
 offset_top = -24.0
 offset_right = 24.0
@@ -48,8 +50,18 @@ offset_bottom = 154.0
 scale = Vector2(0.5, 0.5)
 
 [node name="GolfMeterH" parent="." instance=ExtResource("5_ly0wr")]
+scale = Vector2(0.5, 0.5)
 
 [node name="GolfMeterV" parent="." instance=ExtResource("6_7ga4n")]
+offset_left = 115.0
+offset_top = -111.0
+offset_right = 115.0
+offset_bottom = -111.0
+scale = Vector2(0.5, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_1tjwj")
 
 [connection signal="successful_landing" from="fishing_lure" to="." method="_on_fishing_lure_successful_landing"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
