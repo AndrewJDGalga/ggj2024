@@ -3,6 +3,7 @@ extends Node2D
 class_name Game_Manager
 
 @onready var TimePlayer = $TimeBackground/AnimationPlayer
+@onready var time_of_day = $TimeOfDayText
 var timer = Timer.new()
 var time_hour:int = 0
 var time_minutes:int = 0
@@ -33,15 +34,15 @@ func _ready():
 	timer.one_shot = false
 	add_child(timer)
 	timer.start()
-	update_time_ui()
+	#update_time_ui()
 	
-	TimePlayer.play("TimeOfDay")
-	TimePlayer.advance(0)
-	
-	var anim_length = TimePlayer.current_animation_length
-	TimePlayer.seek(float(hour_start)/24 * anim_length, true)
-	
-	TimePlayer.set_speed_scale(anim_length/day_length)
+	#TimePlayer.play("TimeOfDay")
+	#TimePlayer.advance(0)
+	#
+	#var anim_length = TimePlayer.current_animation_length
+	#TimePlayer.seek(float(hour_start)/24 * anim_length, true)
+	#
+	#TimePlayer.set_speed_scale(anim_length/day_length)
 	
 func increment_daytime():
 	var hour:float = ((hour_end-hour_start) / float(day_length)) * 60
@@ -53,13 +54,13 @@ func increment_daytime():
 	time_am = false if time_hour >= 12 || time_hour == 0 else true
 	time_hour = time_hour % 24
 	
-	update_time_ui()
+	#update_time_ui()
 	
 func update_time_ui():
 	var TimeEnd = "AM" if time_am else "PM"
 	var time_hour_formatted = time_hour if time_hour < 13 else time_hour - 12
 	if (time_hour < 12):
 		time_hour_formatted += 1
-	$TimeOfDayText.set_text(str(time_hour_formatted) + ":" + str(time_minutes).pad_zeros(2) + TimeEnd)
+	time_of_day.set_text(str(time_hour_formatted) + ":" + str(time_minutes).pad_zeros(2) + TimeEnd)
 	
 	

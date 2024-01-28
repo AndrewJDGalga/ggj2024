@@ -1,33 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://eg50hifamjev"]
+[gd_scene load_steps=7 format=3 uid="uid://eg50hifamjev"]
 
 [ext_resource type="PackedScene" uid="uid://crmbqldvypv24" path="res://entities/curtis.tscn" id="1_7jb4x"]
 [ext_resource type="Script" path="res://levels/game_manager.gd" id="1_nvk7h"]
 [ext_resource type="PackedScene" uid="uid://bgouue1wlme4b" path="res://components/fishing_zone.tscn" id="3_6qolk"]
-[ext_resource type="Texture2D" uid="uid://vlh1uirlb4kh" path="res://UI/Icons/MeterPoint.png" id="4_jgtcq"]
+[ext_resource type="PackedScene" uid="uid://b1wycb388itey" path="res://UI/time_background.tscn" id="4_xnr0i"]
 [ext_resource type="PackedScene" uid="uid://vxm4pou8n1l8" path="res://UI/score_summary.tscn" id="5_rgktf"]
 [ext_resource type="PackedScene" uid="uid://c16o0epi7dc3" path="res://UI/tutorial_text.tscn" id="6_11mxm"]
-
-[sub_resource type="Animation" id="Animation_qu365"]
-resource_name = "TimeOfDay"
-length = 6.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 6),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 6.28319]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_jqub8"]
-_data = {
-"TimeOfDay": SubResource("Animation_qu365")
-}
 
 [node name="TestAJ" type="Node2D"]
 script = ExtResource("1_nvk7h")
@@ -74,20 +52,7 @@ offset_right = 589.0
 offset_bottom = 59.0
 text = "Time Of Day"
 
-[node name="TimeBackground" type="TextureRect" parent="."]
-visible = false
-offset_left = 98.0
-offset_top = 82.0
-offset_right = 521.0
-offset_bottom = 488.0
-pivot_offset = Vector2(221, 203)
-texture = ExtResource("4_jgtcq")
-stretch_mode = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="TimeBackground"]
-libraries = {
-"": SubResource("AnimationLibrary_jqub8")
-}
+[node name="TimeBackground" parent="." instance=ExtResource("4_xnr0i")]
 
 [node name="score_summary" parent="." instance=ExtResource("5_rgktf")]
 visible = false

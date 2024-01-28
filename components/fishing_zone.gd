@@ -2,9 +2,9 @@ extends Area2D
 
 @onready var col = $CollisionShape2D
 @onready var anim = $AnimatedSpriteZone
-
+@onready var anim_player = $AnimationPlayer
 ##Range of difficulty, where 1 is hardest and 3 is easiest
-@export_range(1,5) var ease_rating:int
+@export_range(1,5) var ease_rating:int = 1
 @export var base_size:float = 16
 
 func _ready():
@@ -15,9 +15,9 @@ func _ready():
 func set_enabled(enabled:bool):
 	col.call_deferred("set_disabled", !enabled)
 	if (enabled):
-		$AnimationPlayer.play_backwards("FadeRipple")
+		anim_player.play_backwards("FadeRipple")
 	else:
-		$AnimationPlayer.play("FadeRipple")
+		anim_player.play("FadeRipple")
 	
 
 

@@ -36,9 +36,10 @@ func _physics_process(delta):
 				pow_meter.set_label("Power")
 				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
 			game_manager.PLAY_STATE.LINE_UP:
-				tut_text.set_label_text("Press Action1+Action2 when lined up.")
-				if Input.is_action_just_pressed("action1") && Input.is_action_just_pressed("action2"):
-					game_manager.cur_state = game_manager.PLAY_STATE.CASTING
+				tut_text.set_label_text("Press Action3 when lined up.")
+				#if Input.is_action_just_pressed("action1") && Input.is_action_just_pressed("action2"):
+				if Input.is_action_just_pressed("action3"):
+					game_manager.cur_state = game_manager.PLAY_STATE.POWER
 				turn_for_casting(delta)
 			game_manager.PLAY_STATE.POWER:
 				tut_text.set_label_text("Press Action1 to set Power.")
@@ -53,10 +54,10 @@ func _physics_process(delta):
 					game_manager.lure_y_limit, 0, cur_throw_power, 
 					pow_gain_rate, delta)
 			game_manager.PLAY_STATE.ACCURACY:
-				tut_text.set_label_text("Press Action1 to set Accuracy.")
+				tut_text.set_label_text("Press Action2 to set Accuracy.")
 				accuracy_meter.visible = true
 				accuracy_meter.start()
-				if Input.is_action_pressed("action1"):
+				if Input.is_action_pressed("action2"):
 					lure.position.x = line_degree_limit * accuracy_meter.get_percent()
 					accuracy_meter.stop()
 					accuracy_meter.visible = false
