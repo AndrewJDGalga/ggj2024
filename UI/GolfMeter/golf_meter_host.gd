@@ -7,3 +7,6 @@ func start():
 
 func stop():
 	meter.stop()
+
+func get_percent():
+	meter.get_percent()

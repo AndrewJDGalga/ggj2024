@@ -81,8 +81,14 @@ func _physics_process(delta):
 				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
 			game_manager.PLAY_STATE.TEST:
 				golf_meter_h.visible = true
-				golf_meter_v.visible = true
+				golf_meter_h.start()
 				
+				golf_meter_v.visible = false
+				
+				if Input.is_action_just_pressed("action1"):
+					print(golf_meter_h.get_percent())
+					golf_meter_h.stop()
+					
 				
 				#if Input.is_action_just_pressed("ui_accept"):
 					#catch_meter.start(0.3, 0.2)
