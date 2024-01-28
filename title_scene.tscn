@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://brnjnecmh4h7r"]
+
+[ext_resource type="Script" path="res://Title Scene.gd" id="1_jc1rs"]
+[ext_resource type="Texture2D" uid="uid://bxmv08jhuwft3" path="res://assets/art/pickedMedia1.png" id="2_6iywx"]
+[ext_resource type="FontFile" uid="uid://cket3wlt7p1m7" path="res://assets/SuperMario256.ttf" id="3_rkj5n"]
+[ext_resource type="AudioStream" uid="uid://dmbte2gtk6ch8" path="res://assets/audio/GGL - Redneck Fishing/GGL - Redneck Fishing_/Music/Gameplay Music/Dumb_Banjo_Song_extended_2.wav" id="4_w122a"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v0se6"]
+font = ExtResource("3_rkj5n")
+font_size = 100
+font_color = Color(1, 1, 0, 1)
+
+[node name="Title Scene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jc1rs")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_right = 602.0
+offset_bottom = 801.0
+color = Color(0, 0, 1, 1)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 20.0
+offset_top = -57.0
+offset_right = 591.0
+offset_bottom = 702.0
+texture = ExtResource("2_6iywx")
+
+[node name="Play" type="TextureButton" parent="."]
+layout_mode = 2
+offset_right = 602.0
+
+[node name="Play Text" type="Label" parent="Play"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 634.0
+offset_right = 513.0
+offset_bottom = 811.0
+mouse_filter = 1
+text = "Play"
+label_settings = SubResource("LabelSettings_v0se6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_w122a")
+autoplay = true
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Play" to="Play" method="_on_pressed"]

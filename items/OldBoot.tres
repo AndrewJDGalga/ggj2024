@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bgcng1f1w3eyh"]
+
+[ext_resource type="Texture2D" uid="uid://0e6itwwkh1md" path="res://assets/art/Old Boot.png" id="1_mpk3o"]
+[ext_resource type="Script" path="res://items/ItemData.gd" id="1_xhq2e"]
+
+[resource]
+script = ExtResource("1_xhq2e")
+item_name = "Old Boot"
+item_desc = "Now dis, dis right here, is an' old sole."
+item_texture = ExtResource("1_mpk3o")
+score = 4
+rarity = 4

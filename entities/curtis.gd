@@ -34,6 +34,7 @@ func _physics_process(delta):
 				pow_meter.set_label("Power")
 				game_manager.cur_state = game_manager.PLAY_STATE.LINE_UP
 			game_manager.PLAY_STATE.LINE_UP:
+				lure.position = Vector2.ZERO
 				tut_text.set_label_text("Press Action3 when lined up.")
 				#if Input.is_action_just_pressed("action1") && Input.is_action_just_pressed("action2"):
 				if Input.is_action_just_pressed("action3"):

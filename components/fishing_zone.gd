@@ -3,7 +3,8 @@ extends Area2D
 @onready var col = $CollisionShape2D
 @onready var anim = $AnimatedSpriteZone
 @onready var anim_player = $AnimationPlayer
-var game_manager:Game_Manager
+@export var game_manager:Game_Manager
+#var game_manager:Game_Manager
 var valid:bool = false
 ##Range of difficulty, where 1 is hardest and 5 is easiest
 @export_range(1,5) var rarity:int = 1
@@ -13,7 +14,7 @@ func _ready():
 	#col.shape.radius = base_size * ease_rating
 	#anim.set_scale(Vector2(ease_rating*2, ease_rating*2))
 	anim.play("default")
-	game_manager = get_tree().root.get_child(0)
+	#game_manager = get_tree().root.get_child(0)
 	
 func set_enabled(enabled:bool):
 	col.call_deferred("set_disabled", !enabled)

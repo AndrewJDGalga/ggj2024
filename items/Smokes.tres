@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=2 format=3 uid="uid://b01kj0i0r4vrc"]
+
+[ext_resource type="Script" path="res://items/ItemData.gd" id="1_kg06p"]
+
+[resource]
+script = ExtResource("1_kg06p")
+item_name = "Smokes"
+item_desc = "Oh bo-! I mean, smokin's bad gamer. This here's a good Christian game of lazing the day away drinkin' Moonshine."
+score = 0
+rarity = 0
