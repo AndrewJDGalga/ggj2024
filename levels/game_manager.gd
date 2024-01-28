@@ -14,7 +14,7 @@ var time_am = true
 signal update_score(new_value)
 
 enum PLAY_STATE {TEST, LINE_UP, POWER, ACCURACY, CASTING, CATCHING, CATCH_FAIL,
-	CAST_SUCCEED, CATCH_SUCCEED, STANDUP_SITDOWN, WALKING, WRESTLING}
+	CAST_SUCCEED, CATCH_SUCCEED }
 var cur_state : PLAY_STATE = PLAY_STATE.CATCH_SUCCEED
 @export var lure_y_limit := -650
 var score:int

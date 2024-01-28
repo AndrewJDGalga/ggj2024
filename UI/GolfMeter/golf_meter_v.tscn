@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b3p6yc14m14xh"]
 
+[ext_resource type="Script" path="res://UI/GolfMeter/golf_meter_host.gd" id="1_0ghsm"]
 [ext_resource type="LabelSettings" path="res://UI/TitleLabelSettings.tres" id="1_bu7fm"]
-[ext_resource type="Script" path="res://UI/GolfMeter/golf_meter_host.gd" id="1_rk8eb"]
 [ext_resource type="PackedScene" uid="uid://bfrkthsjqt71x" path="res://UI/GolfMeter/golf_meter_base.tscn" id="2_twwn7"]
 
 [node name="GolfMeterV" type="Control"]
@@ -11,7 +11,7 @@ anchor_bottom = 0.684
 offset_bottom = -0.200012
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_rk8eb")
+script = ExtResource("1_0ghsm")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
