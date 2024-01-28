@@ -13,7 +13,7 @@ func _ready():
 	anim.play("default")
 	
 func set_enabled(enabled:bool):
-	col.set_disabled(!enabled)
+	col.call_deferred("set_disabled", !enabled)
 	if (enabled):
 		$AnimationPlayer.play_backwards("FadeRipple")
 	else:
@@ -21,7 +21,7 @@ func set_enabled(enabled:bool):
 	
 
 
-func _on_area_entered(area):
+func _on_area_entered(_area):
 	set_enabled(false)
 	$ZoneCooldown.start()
 
@@ -30,5 +30,5 @@ func _on_timer_timeout():
 	set_enabled(true)
 
 
-func _on_animation_player_animation_finished(anim_name):
+func _on_animation_player_animation_finished(_anim_name):
 	pass # Replace with function body.
